@@ -38,7 +38,7 @@ var SimpleLightbox = /*#__PURE__*/function () {
     _defineProperty(this, "defaultOptions", {
       sourceAttr: 'href',
       overlay: true,
-      overlayOpacity: 0.7,
+      overlayOpacity: 0.9,
       spinner: true,
       nav: true,
       navText: ['&lsaquo;', '&rsaquo;'],
