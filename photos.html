@@ -9,20 +9,89 @@
 <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap" rel="stylesheet">
 
-<script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "WebSite",
-"name": "Tanner Mardis",
-"url": "https://tannermardis.com",
-"creator": {
-"@type": "Organization",
-"name": "Mardis Studio",
-"url": "https://mardis.studio",
-"description": "Designed and developed by Mardis Studio."
+<style type="text/css">
+  /**
+ * BASIC TYPE
+ */
+
+
+img, video {
+  max-width: 100%;
+  vertical-align: middle;
 }
+
+p:not(:last-child) {
+  margin: 0 0 1em;
 }
-</script>
+
+
+/**
+ * BOX HACKING
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.wrapper {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.5em;
+}
+
+.masonry-wrapper {
+  padding: 1.5em;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.masonry {
+  columns: 1;
+  column-gap: 4px;
+}
+.masonry-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 4px;
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {  .masonry {
+    columns: 2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
+.masonry-item, .masonry-content {
+  border-radius: 2px;
+  overflow: hidden;
+}
+.masonry-footer {
+  font-size: .75em;
+  opacity: .25;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  margin-bottom: -1.5em;
+  transition: opacity 1s ease-in-out;
+}
+.masonry-footer a {
+  color: currentColor;
+}
+.masonry-footer:hover, .masonry-footer:active, .masonry-footer:focus {
+  opacity: .75;
+}
+  
+</style>
+
+
 
 </head>
 
