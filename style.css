@@ -50,8 +50,7 @@ body {
   color: #f0f0f0;
   padding: 0px;
   margin: 0px;
-  background: #141515;
-  background-image: url(images/noise.png);
+  background: #141515 url(images/noise.png);
 }
 
 ol, ul {
