@@ -1,3 +1,12 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.333,1240,18,1.5,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
+  --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+  --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
+  --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
+}
+
 /**
  * RESET
  * Reference: http://meyerweb.com/eric/tools/css/reset/
@@ -29,20 +38,20 @@ footer, header, hgroup, main, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1.618;
-  font-family: 'rubik', sans-serif;
-    color: #f0f0f0;
-    letter-spacing: 1px;
-    padding: 0px;
-    margin: 0px;
-    background: #0d191a;
+html {
+  box-sizing: border-box;
+  background: #141515;
 }
-body {
-  background-color: #1c1c1c;
-  background-image: url(noise.png);
-  color: #707070;
 
+body {
+  line-height: 1.6;
+  font-family: 'rubik', sans-serif;
+  font-size: var(--step-0);
+  color: #f0f0f0;
+  padding: 0px;
+  margin: 0px;
+  background: #141515;
+  background-image: url(/Users/tannermardis/Documents/GitHub/tannermardis/images/noise.png);
 }
 
 ol, ul {
@@ -63,53 +72,43 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 h1 {
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    font-size: 2.5em;
+    font-size: var(--step-2);
     margin: 20px 0px;
     text-align: center;
     display: block;
 }
-h2 {
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 1.5em;
-    margin: 20px 0px;
-    text-align: center;
-    display: block;
-}
-h3 {
-    font-weight: 700;
-    font-size: 1.5em;
-    text-align: center;
-}
-ul {
-    margin: 70px auto;
-    max-width: 960px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
 
-}
-li {
-    width: 20%;
-    padding: 1em;
-    min-width: 8em;
-    position: relative;
-    text-align: center;
-}
 a {
    color: #f0f0f0;
    text-decoration: none;
 }
 a:hover {
-    color: #00A6FE;
+    color: #19A467;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+.footer {
+  font-size: var(--step--1);
+  opacity: .25;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  margin-bottom: -1.5em;
+  transition: opacity 1s ease-in-out;
+}
+.footer a {
+  color: currentColor;
+}
+.footer:hover, .footer:active, .footer:focus {
+  opacity: .75;
 }
 

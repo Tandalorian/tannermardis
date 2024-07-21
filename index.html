@@ -25,20 +25,20 @@
 
 <style type="text/css">
             
-.logo {
-  width: 200px;
-  height: 200px;
+html, body {
+    background: #0F1A19;
+    background-image: url(/Users/tannermardis/Documents/GitHub/tannermardis/images/noise.png);
 }
 
+body {
+    background: #0F1A19;
+    background-image: url(/Users/tannermardis/Documents/GitHub/tannermardis/images/noise.png);
+}
 
 .fa-3x, .fa-2x {
     margin: 10px 0px;
 }
-ul.passions path {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 10px;
-}
+
 div#container {
     padding:5rem 1rem;
     overflow: hidden;
@@ -48,7 +48,8 @@ div#header {
     background-size: cover;
     width:18rem;
     height:18rem;
-    border-radius:300px;
+    border-radius: clamp(24px, 10vw, 300px);
+    border: 1px solid #0B1412;
     margin:auto auto;
 }
 div#header svg {
@@ -60,45 +61,38 @@ div#section1 {
     min-width:300px;
 }
 
-li .fa-pen-ruler path {
-    stroke:#00a6ff;
+ul {
+    margin: 70px auto;
+    max-width: 960px;
+    display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly; 
+  align-items: center;
+  align-content: stretch;
+  gap: 8px;
+
 }
-li .fa-mug-hot path {
-    stroke:#0abaeb;
-}
-li .fa-text-width path {
-    stroke:#17d5d0;
-}
-li .fa-rebel path {
-    stroke:#23ecb9;
-}
-li .fa-cubes path {
-    stroke:#2dffa6;
-}
-ul li:nth-child(1) {
-     color: #00a6ff;
-}
-ul li:nth-child(2) {
-     color: #0abaeb;
-}
-ul li:nth-child(3) {
-     color: #17d5d0;
-}
-ul li:nth-child(4) {
-     color: #23ecb9;
-}
-ul li:nth-child(5) {
-     color: #2dffa6;
+li {
+    width: 20%;
+    padding: 1em;
+    min-width: 8em;
+    position: relative;
+    text-align: center;
+    border: 1px solid #19A467;
+    border-radius: clamp(4px, 2vw, 50px);
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
 }
 
 
 </style>
 
-
 </head>
-
-
-
 
 <body>
 
@@ -118,50 +112,36 @@ ul li:nth-child(5) {
 
 
 <div id="section1">
-<h1>Tanner <small>the</small> Mardis</h1>
+<h1 class="step-2">Tanner <small>the</small> Mardis</h1>
 </div>
 
 
 <div id="section2">
-  <h3></h3>
   <ul>
+    <a href="https://dribbble.com/tannermardis" target="blank">
       <li>
-            <a href="https://dribbble.com/tannermardis" target="blank">
-                <i class="fa-brands fa-dribbble"></i>
-                
-            </a>
+         <i class="fa-brands fa-dribbble step-0"></i>
+         <p>Dribbble</p> 
         </li>
+    </a>
+    <a href="https://x.com/tannermardis" target="blank">
         <li>
-            <a href="https://x.com/tannermardis" target="blank">
-                <i class="fa-brands fa-x-twitter"></i>
-                
-            </a>
+            <i class="fa-brands fa-x-twitter step-0"></i>
+            <p>X</p>
         </li>
+    </a>
+    <a href="https://tannermardis.com/bookshelf">
         <li>
-            <a href="https://tannermardis.com/bookshelf">
-                <i class="fa-solid fa-book-open"></i>
-                
-            </a>
+            <i class="fa-solid fa-book-open step-0"></i>
+            <p>Bookshelf</p>                
         </li>
+    </a>
+    <a href="https://tannermardis.com/photos">
         <li>
-            <a href="https://vsco.co/tannermardis/gallery" target="blank">
-                <i class="fa-solid fa-camera"></i>
-                
-            </a>
+            <i class="fa-regular fa-image step-0"></i>
+            <p>Photography</p>
         </li>
-        <li>
-            <a href="https://unsplash.com/@tannermardis" target="blank">
-                <i class="fa-brands fa-unsplash"></i>
-                
-            </a>
-        </li>
-        <li>
-            <a href="https://tannermardis.com/photos">
-                <i class="fa-regular fa-image"></i>
-                
-            </a>
-        </li>
-      
+    </a>   
   </ul>
 
 </div>

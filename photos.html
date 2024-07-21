@@ -31,6 +31,11 @@ p:not(:last-child) {
 
 html {
   box-sizing: border-box;
+  background: #141515;
+}
+
+body {
+  background: #141515;
 }
 
 *,
@@ -38,6 +43,8 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+
 .wrapper {
   max-width: 1280px;
   margin-right: auto;
@@ -73,22 +80,8 @@ html {
   border-radius: 2px;
   overflow: hidden;
 }
-.masonry-footer {
-  font-size: .75em;
-  opacity: .25;
-  text-align: center;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  margin-bottom: -1.5em;
-  transition: opacity 1s ease-in-out;
-}
-.masonry-footer a {
-  color: currentColor;
-}
-.masonry-footer:hover, .masonry-footer:active, .masonry-footer:focus {
-  opacity: .75;
-}
-  
+
+
 </style>
 
 
@@ -478,7 +471,7 @@ html {
       </div>
     </div>
   </div>
-  <div class="masonry-footer">
+  <div class="footer">
     <p>Created with &#10084; with <a href="//w3bits.com/tools/masonry-generator/" target="_blank" rel="external noopener nofollow">CSS Masonry Generator</a></p>
   </div>
 </div>
