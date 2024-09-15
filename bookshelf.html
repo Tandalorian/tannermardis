@@ -90,10 +90,18 @@ body {
   border: 1px solid var(--3);
   box-shadow: var(--shadow-elevation-medium);
   object-fit: contain;
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+  overflow: hidden;
+}
+
+.book:hover {
+  bottom: -14px;
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .book img {
-  width: 200px;
+  width: 150px;
   object-fit: contain;
 }
 
