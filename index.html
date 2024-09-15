@@ -41,8 +41,9 @@ div#container {
     overflow: hidden;
 }
 div#header {
-    background: url('images/tanner-minifig.jpg') no-repeat;
+    background: url('images/tm-coffee@2x.jpg') no-repeat;
     background-size: cover;
+    object-fit: cover;
     width:18rem;
     height:18rem;
     border-radius: clamp(24px, 10vw, 300px);
@@ -79,12 +80,42 @@ li {
     border: 1px solid #19A467;
     border-radius: clamp(4px, 2vw, 50px);
     display: block;
+    overflow: visible;
+}
+
+a li img {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    overflow: auto;
+    opacity: 0;
+}
+
+a p:hover ~ img {
+    opacity: 1;
 }
 
  i, li p, li svg {
     display: inline;
  }
 
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-gallery input {
+  display: none;
+}
+
+li label img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
 
 </style>
 
@@ -97,6 +128,24 @@ li {
 
 
 <div id="header">
+
+<div class="image-gallery">
+  <input type="radio" name="gallery" id="img1" checked>
+  <input type="radio" name="gallery" id="img2">
+  <input type="radio" name="gallery" id="img3">
+</div>
+
+
+<img src="images/tm-dribbble@2x.jpg">
+<img src="images/tm-twitter@2x.jpg">
+<img src="images/tm-book@2x.jpg">
+<img src="images/tm-photography@2x.jpg">
+<img src="images/tm-jedi@2x.jpg">
+<img src="images/tm-jedi@2x.jpg">
+
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
 <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 800 800" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -112,30 +161,44 @@ li {
 </div>
 
 
+
 <div id="section2">
   <ul>
     <a href="https://dribbble.com/tannermardis" target="blank">
       <li>
          <i class="fa-brands fa-dribbble"></i>
-         <p>Dribbble</p> 
+         <p>Dribbble</p>
+         <label for="img1"><img src="images/tm-dribbble@2x.jpg" alt="Dribbble"></label>
         </li>
     </a>
     <a href="https://x.com/tannermardis" target="blank">
         <li>
             <i class="fa-brands fa-x-twitter"></i>
             <p>Twitter</p>
+            <label for="img2"><img src="images/tm-twitter@2x.jpg" alt="Twitter"></label>
+            
         </li>
     </a>
     <a href="https://tannermardis.com/bookshelf">
         <li>
             <i class="fa-solid fa-book-open"></i>
-            <p>Bookshelf</p>                
+            <p>Bookshelf</p>
+            <label for="img3"><img src="images/tm-book@2x.jpg" alt="Bookshelf"></label>
+                    
         </li>
     </a>
     <a href="https://tannermardis.com/photos">
         <li>
             <i class="fa-regular fa-image"></i>
             <p>Photography</p>
+            
+        </li>
+    </a>   
+    <a href="https://tannermardis.com/photos">
+        <li>
+            <i class="fa-regular fa-image"></i>
+            <p>Star Wars</p>
+        
         </li>
     </a>   
   </ul>

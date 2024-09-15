@@ -17,109 +17,147 @@ html {
   
 
 /*BOOKSHELF*/
-
-.book-wrapper {
-  width: 900px;
-  position: relative;
-  margin: 0 auto;
-  column-count: 3;
-  column-gap: 12px;
-  padding: 4px;
+:root {
+  --1: #ffffff;
+  --2: #e1e2e2;
+  --3: #7f7f80;
+  --4: #222222;
+  --5: #3b3b3b;
+  --6: #111111;
+  --shadow-color: 0deg 0% 29%;
+  --shelf: linear-gradient(
+    0deg,
+    rgba(71, 71, 71, 1) 0%,
+    rgba(99, 99, 99, 1) 23%,
+    rgba(99, 99, 99, 1) 75%,
+    rgba(71, 71, 71, 1) 100%
+  );
+  --shadow-elevation-medium: 0px 0.6px 0.6px hsl(var(--shadow-color) / 0.39),
+    0px 1.3px 1.3px -0.8px hsl(var(--shadow-color) / 0.35),
+    0px 2.7px 2.7px -1.7px hsl(var(--shadow-color) / 0.31),
+    0px 5.9px 5.8px -2.6px hsl(var(--shadow-color) / 0.27),
+    0px 11.9px 11.8px -3.4px hsl(var(--shadow-color) / 0.23);
 }
-.book-items {
-  position: relative;
-  cursor: default;
-  padding: 16px;
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
-  display: grid;
-  break-inside: avoid;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
 
-.main-book-wrap {
-  position: relative;
+body {
+  background: var(--2);
+  padding: 20px 20px 0px 20px;
+  border: 1px solid var(--1);
+  height: 100%;
 }
 
-.book-cover {
-  position: relative;
+.bookcase {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--3);
+  padding: 0px 0px;
+  height: 100%;
+  z-index: 0;
 }
 
-.book-cover .book-inside {
-  position: absolute;
-  width: 90%;
-  height: 96%;
-  top: 1%;
-  left: 16px;
-  border: 1px solid grey;
-  border-radius: 2px 6px 6px 2px;
-  background: white;
-  box-shadow: 10px 40px 40px -10px #00000030, inset -2px 0 0 grey,
-    inset -3px 0 0 #dbdbdb, inset -4px 0 0 white, inset -5px 0 0 #dbdbdb,
-    inset -6px 0 0 white, inset -7px 0 0 #dbdbdb, inset -8px 0 0 white,
-    inset -9px 0 0 #dbdbdb;
+.bookwrap {
+  height: 350px;
+  border-bottom: 24px solid var(--2);
+  background: var(--shelf);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 0px 0px 0px;
+  min-width: 200px;
+  z-index: 8;
 }
 
-.book-cover .book-image {
-  line-height: 0;
-  position: relative;
-  border-radius: 2px 6px 6px 2px;
-  box-shadow: 6px 6px 18px -2px rgba(0, 0, 0, 0.2),
-    24px 28px 40px -6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  transform: perspective(2000px) rotateY(-15deg) translateX(-10px) scaleX(0.94);
-  cursor: pointer;
-}
-
-.book-image img {
-  grid-row: 1 / -1;
-  grid-column: 1;
+.bookwrap::after {
+  content: "";
+  height: 48px;
   width: 100%;
-  border-radius: 2px 6px 6px 2px;
+  background: var(--shelf);
+  z-index: 0;
 }
 
-.book-image:hover {
-  transform: perspective(2000px) rotateY(0deg) translateX(0px) scaleX(1);
-  transform-style: preserve-3d;
-  box-shadow: 6px 6px 12px -1px rgba(0, 0, 0, 0.1),
-    20px 14px 16px -6px rgba(0, 0, 0, 0.1);
+.book {
+  background: var(--4);
+  position: relative;
+  bottom: -24px;
+  width: 150px;
+  margin: 0px;
+  z-index: 1;
+  border: 1px solid var(--3);
+  box-shadow: var(--shadow-elevation-medium);
+  object-fit: contain;
 }
 
-.effect {
-  position: absolute;
-  width: 20px;
-  height: 100%;
-  margin-left: 16px;
-  top: 0;
-  border-left: 2px solid #00000010;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transition: all 0.5s ease;
-  z-index: 5;
+.book img {
+  width: 200px;
+  object-fit: contain;
 }
-
-.light {
-  width: 90%;
-  height: 100%;
-  position: absolute;
-  border-radius: 3px;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  top: 0;
-  right: 0;
-  opacity: 0.1;
-  transition: all 0.5s ease;
-  z-index: 4;
-}
-
-.book-image:hover .effect{
-    margin-left: 14px;
-}
-
 
 
 
@@ -130,133 +168,48 @@ html {
 
 
 <body>
-
-  <div class="logo">
-  <a href="https://tannermardis.com">
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-    <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 800 800" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-        <g transform="matrix(.62585 0 0 .62585 -581.05 -772.49)">
-            <path d="m1548.7 1612.8c-131.09 57.03-337.65 146.2-388.11 167.97-2.39 1.03-5.15 0.73-7.26-0.8-2.11-1.52-3.27-4.05-3.04-6.65 0.57-6.44 1.28-14.39 1.89-21.34 0.89-10.09 7.23-18.88 16.53-22.9 51.98-22.51 227.96-98.71 363.81-157.6 144.27-62.55 280.78-121.85 296.08-128.13 39.2-16.09 53.05-14.81 93.64 31.53 41.51 47.4 18.26 64.42-30.26 86.31-99.63 44.94-169.15 71.45-211 111.78-46.35 44.67-75.67 101.53-93 176-17.11 73.56-22.87 174.77-28 271-5.13 96.35-4.87 136.98-6 177-0.92 32.64-5.38 41.35-49 64.22-48.25 25.29-64.82 26.04-63-21.22 2.69-69.98 10.56-257.32 20-347 9.47-89.93 16.69-170.01 67-253 51.18-84.43 148.08-132.02 216-163 65.36-29.81 98.25-44.99 130.43-59.36 10.84-4.84 17.83-9.11 5.15-23.47-12.66-14.33-21.92-15.65-49.5-3.53-28.61 12.57-150 64.61-282.36 122.19z" fill="#f0f0f0"/>
-        </g>
-    </svg>
-  </a>
-</div>
-
-
-
-<div class="book-wrapper">
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/919zO0ZFVQL._SY522_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+<div class="bookcase">
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/81jN2hzQg9L._SY522_.jpg" />
     </div>
   </div>
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/61wNuShMlXL._SY522_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/31IZBzabP-L._SX342_SY445_.jpg" />
     </div>
   </div>
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/51Fx6UQ34bL._SY522_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/5176ZejmyrL._SY522_.jpg" />
     </div>
   </div>
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/91SDut4rHZL._SY522_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/61wNuShMlXL._SY522_.jpg" />
     </div>
   </div>
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/41UKFybK78L.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/71gnJ-dXgxL._SY522_.jpg" />
     </div>
   </div>
-
-<div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/918EkrTDaRL._SY522_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/81jWWukq-3L._SY522_.jpg" />
     </div>
   </div>
-
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/91SDut4rHZL._SY522_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/412htoq2vvL._SY445_SX342_.jpg" />
     </div>
   </div>
-
-  <div class="book-items">
-    <div class="main-book-wrap">
-      <div class="book-cover">
-        <div class="book-inside"></div>
-        <div class="book-image">
-          <img src="https://m.media-amazon.com/images/I/217eSv9bskL._SX342_SY445_.jpg" />
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-
-      </div>
+  <div class="bookwrap">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/41aX0fEkNwL._SY445_SX342_.jpg" />
     </div>
   </div>
-
-
-
 
 </div>
-<div class="footer">
-Made with Code from <a href="https://vjy.me/book">realvjy</a>
-</div>
+</body>
+</html>
