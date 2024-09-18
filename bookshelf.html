@@ -19,32 +19,41 @@ html {
 /*BOOKSHELF*/
 :root {
   --1: #ffffff;
-  --2: #e1e2e2;
+  --2: #E0DFDB;
   --3: #7f7f80;
   --4: #222222;
   --5: #3b3b3b;
   --6: #111111;
-  --shadow-color: 220deg 10% 20%;
+
+  --shadow-color: 44deg 8% 20%;
+  --shadow-elevation-low:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.39),
+    0px 1px 1.2px -1.9px hsl(var(--shadow-color) / 0.51);
+  --shadow-elevation-medium:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.36),
+    0px 1.3px 1.6px -0.9px hsl(var(--shadow-color) / 0.44),
+    0.1px 4.8px 5.8px -1.9px hsl(var(--shadow-color) / 0.51);
+  --shadow-elevation-high:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.4),
+    0px 2.7px 3.3px -0.5px hsl(var(--shadow-color) / 0.45),
+    0.1px 5.9px 7.2px -0.9px hsl(var(--shadow-color) / 0.51),
+    0.2px 12.2px 14.8px -1.4px hsl(var(--shadow-color) / 0.56),
+    0.3px 23.7px 28.8px -1.9px hsl(var(--shadow-color) / 0.61);
+
   --shelf: linear-gradient(
     0deg,
-    rgba(60, 60, 60, 1) 0%,
-    rgba(80, 80, 80, 1) 23%,
-    rgba(80, 80, 80, 1) 75%,
-    rgba(60, 60, 60, 1) 100%
+    rgba(62, 60, 58, 1) 0%,
+    rgba(82, 80, 78, 1) 25%,
+    rgba(82, 80, 78, 1) 75%,
+    rgba(62, 60, 58, 1) 100%
   );
    --back: linear-gradient(
     0deg,
-    rgba(70, 70, 70, 1) 0%,
-    rgba(110, 110, 110, 1) 23%,
-    rgba(110, 110, 110, 1) 75%,
-    rgba(70, 70, 70, 1) 100%
+    rgba(72, 70, 68, 1) 0%,
+    rgba(112, 110, 108, 1) 25%,
+    rgba(112, 110, 108, 1) 75%,
+    rgba(72, 70, 68, 1) 100%
   );
-  --shadow-elevation-medium:
-      0px 4px 4px hsl(var(--shadow-color) / 0.333),
-      0px 8px 8px hsl(var(--shadow-color) / 0.333),
-      0px 12px 12px hsl(var(--shadow-color) / 0.333);
-  }
-
 
 
 body {
@@ -62,22 +71,22 @@ body {
   background: var(--3);
   padding: 0px 0px;
   height: 100%;
-  z-index: 0;
+
 }
 
 .bookwrap {
-  height: 350px;
+  height: clamp(350px, 40vh, 500px);
+  width: clamp(200px, 20vw, 300px);
   border-bottom: 24px solid var(--2);
   background: var(--back);
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 0px 0px 0px 0px;
-  min-width: 200px;
-  z-index: 8;
-  perspective: 500px;
+  padding: 0px;
+  margin: 0px;
+  perspective: 800px;
   perspective-origin: left center;
 }
 
@@ -86,33 +95,29 @@ body {
   height: 48px;
   width: 100%;
   background: var(--shelf);
-  z-index: 0;
+
 }
 
 .book {
-  background: var(--2);
+  width: 150px;
+  min-height: 150px;
+  background: var(--6);
   position: relative;
   bottom: -24px;
-  width: 150px;
   margin: 0px;
-  z-index: 1;
   box-shadow: var(--shadow-elevation-medium);
-  object-fit: contain;
   transition: all 0.2s;
   transition-timing-function: ease-in-out;
 }
 
 .book:hover {
-  box-shadow: var(--shadow-elevation-medium);
-  transform: rotateX(0deg) rotateY(-20deg);transform-style: preserve-3d;
+  box-shadow: var(--shadow-elevation-high);
+  transform: rotateX(0deg) rotateY(-15deg) scale(1.05);
+  transform-style: preserve-3d;
 }
 
 .book img {
   border: 1px solid var(--6);
-  background: var(--4);
-  width: 150px;
-  object-fit: contain;
-
 }
 
 
