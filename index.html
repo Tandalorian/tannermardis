@@ -35,24 +35,19 @@
                 background-image: url("images/noise.png");
             }
 
-            .fa-3x,
-            .fa-2x {
-                margin: 10px 0px;
-            }
-
             div#container {
                 padding: 5rem 1rem;
                 overflow: hidden;
             }
             div#header {
-                background: url("images/tm-coffee@2x.jpg") no-repeat;
+                background: url("images/tm-coffee.jpg") no-repeat;
                 background-size: cover;
                 object-fit: cover;
                 width: 18rem;
                 height: 18rem;
                 border-radius: clamp(24px, 10vw, 300px);
                 border: 1px solid #0b1412;
-                margin: auto auto;
+                margin: 10% auto;
             }
             div#header svg {
                 position: relative;
@@ -62,22 +57,18 @@
             div#section1 {
                 min-width: 300px;
             }
-
-            ul {
+            div#section2 {
                 margin: 70px auto;
-                max-width: 960px;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
-                align-items: center;
-                align-content: stretch;
-                gap: 8px;
-                box-sizing: content-box;
+                gap: 32px;
+                max-width: 960px;
             }
-            li {
-                width: 20%;
-                padding: 1em;
+
+            #section2 a {
+                padding: 0.8em;
                 min-width: 9em;
                 position: relative;
                 text-align: center;
@@ -85,47 +76,21 @@
                 border-radius: clamp(4px, 2vw, 50px);
                 display: block;
                 overflow: visible;
+                transition: all 0.2s ease-in-out;
             }
 
-            a li img {
-                width: 600px;
-                height: 600px;
-                position: absolute;
-                overflow: auto;
-                opacity: 0;
+            a:hover {
+                color: #b0d16a;
             }
 
-            a p:hover ~ img {
-                opacity: 1;
-            }
-
-            i,
-            li p,
-            li svg {
-                display: inline;
-            }
-
-            .image-gallery {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .image-gallery input {
-                display: none;
-            }
-
-            li label img {
-                width: 100px;
-                height: 100px;
-                object-fit: cover;
-                cursor: pointer;
-                transition: opacity 0.3s ease;
-            }
             .logo {
                 transform: scale(1.5);
                 position: relative;
-                right: -65%;
+                right: -60%;
+                top: -140%;
+            }
+            .circle-name {
+                transform: scale(1.4);
             }
         </style>
     </head>
@@ -133,7 +98,12 @@
     <body>
         <div id="container">
             <div id="header">
-                <img class="logo" src="images/white-t.svg" />
+                <img
+                    class="circle-name"
+                    src="images/circle-name.svg"
+                    alt="Tanner the Mardis"
+                />
+                <img class="logo" src="images/logo-filled.svg" />
                 <!--
 <img src="images/tm-photography@2x.jpg">
 <img src="images/tm-dribbble@2x.jpg">
@@ -145,58 +115,24 @@
 -->
             </div>
 
-            <div id="section1">
-                <h1 class="step-2">Tanner <small>the</small> Mardis</h1>
-            </div>
+            <div id="section1"></div>
 
             <div id="section2">
-                <ul>
-                    <a href="https://dribbble.com/tannermardis" target="blank">
-                        <li>
-                            <i class="fa-brands fa-dribbble"></i>
-                            <p>Dribbble</p>
-                            <label for="img1"
-                                ><img
-                                    src="images/tm-dribbble@2x.jpg"
-                                    alt="Dribbble"
-                            /></label>
-                        </li>
-                    </a>
-                    <a href="https://x.com/tannermardis" target="blank">
-                        <li>
-                            <i class="fa-brands fa-x-twitter"></i>
-                            <p>Twitter</p>
-                            <label for="img2"
-                                ><img
-                                    src="images/tm-twitter@2x.jpg"
-                                    alt="Twitter"
-                            /></label>
-                        </li>
-                    </a>
-                    <a href="/bookshelf">
-                        <li>
-                            <i class="fa-solid fa-book-open"></i>
-                            <p>Bookshelf</p>
-                            <label for="img3"
-                                ><img
-                                    src="images/tm-book@2x.jpg"
-                                    alt="Bookshelf"
-                            /></label>
-                        </li>
-                    </a>
-                    <a href="/photos">
-                        <li>
-                            <i class="fa-regular fa-image"></i>
-                            <p>Photography</p>
-                        </li>
-                    </a>
-                    <a href="https://tannermardis.com/photos">
-                        <li>
-                            <i class="fa-regular fa-image"></i>
-                            <p>Star Wars</p>
-                        </li>
-                    </a>
-                </ul>
+                <a href="https://dribbble.com/tannermardis" target="blank">
+                    <p>Dribbble</p>
+                </a>
+                <a href="https://x.com/tannermardis" target="blank">
+                    <p>Twitter</p>
+                </a>
+                <a href="/bookshelf">
+                    <p>Bookshelf</p>
+                </a>
+                <a href="/photos">
+                    <p>Photography</p>
+                </a>
+                <a href="https://tannermardis.com/photos">
+                    <p>Star Wars</p>
+                </a>
             </div>
         </div>
     </body>
