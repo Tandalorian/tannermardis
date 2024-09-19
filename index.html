@@ -73,6 +73,7 @@
                 align-items: center;
                 align-content: stretch;
                 gap: 8px;
+                box-sizing: content-box;
             }
             li {
                 width: 20%;
@@ -121,13 +122,18 @@
                 cursor: pointer;
                 transition: opacity 0.3s ease;
             }
+            .logo {
+                transform: scale(1.5);
+                position: relative;
+                right: -65%;
+            }
         </style>
     </head>
 
     <body>
         <div id="container">
             <div id="header">
-                <img src="images/white-t.svg" />
+                <img class="logo" src="images/white-t.svg" />
                 <!--
 <img src="images/tm-photography@2x.jpg">
 <img src="images/tm-dribbble@2x.jpg">
