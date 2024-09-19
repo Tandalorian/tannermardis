@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="style.css" />
         <title>Tanner's Bookshelf</title>
+        <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap"
@@ -12,12 +12,6 @@
         />
 
         <style type="text/css">
-            html {
-                background: #141515;
-                background-image: url("images/noise.png");
-            }
-
-            /*BOOKSHELF*/
             :root {
                 --1: #ffffff;
                 --2: #e0dfdb;
@@ -41,68 +35,61 @@
                     0.2px 12.2px 14.8px -1.4px hsl(var(--shadow-color) / 0.56),
                     0.3px 23.7px 28.8px -1.9px hsl(var(--shadow-color) / 0.61);
 
-                --shelf: linear-gradient(
-                    0deg,
-                    rgba(62, 60, 58, 1) 0%,
-                    rgba(82, 80, 78, 1) 25%,
-                    rgba(82, 80, 78, 1) 75%,
-                    rgba(62, 60, 58, 1) 100%
-                );
-                --back: linear-gradient(
-                    0deg,
-                    rgba(72, 70, 68, 1) 0%,
-                    rgba(112, 110, 108, 1) 25%,
-                    rgba(112, 110, 108, 1) 75%,
-                    rgba(72, 70, 68, 1) 100%
-                );
+                --shelf: url("images/noise.png"),
+                    linear-gradient(
+                        0deg,
+                        rgba(72, 70, 58, 1) 0%,
+                        rgba(82, 80, 78, 1) 25%,
+                        rgba(62, 60, 58, 1) 100%
+                    );
+                --back: url("images/noise.png"),
+                    linear-gradient(
+                        0deg,
+                        rgba(72, 70, 68, 1) 0%,
+                        rgba(112, 110, 108, 1) 25%,
+                        rgba(112, 110, 108, 1) 75%,
+                        rgba(52, 50, 48, 1) 100%
+                    );
+            }
+
+            html {
+                background: var(--4);
+                background-image: url("images/noise.png");
             }
 
             body {
-                background: var(--2);
-                padding: 20px 20px 0px 20px;
-                border: 1px solid var(--1);
-                height: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .bookcase {
+                justify-self: center;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: flex-start;
                 justify-content: center;
-                background: var(--3);
+                border: 24px solid var(--2);
+                border-bottom: 0px;
                 padding: 0px 0px;
-                height: 100%;
+                max-width: 1400px;
             }
 
             .topshelf {
                 height: 200px;
                 width: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
-                justify-content: flex-end;
-                background: var(--back);
+                background: var(--4);
+                background-image: url("images/noise.png");
                 border-bottom: 24px solid var(--2);
-            }
-
-            .topshelf h1,
-            .topshelf p {
-                position: relative;
-                bottom: -30px;
-            }
-
-            .topshelf::after {
-                content: "";
-                height: 48px;
-                width: 100%;
-                background: var(--shelf);
             }
 
             .bookwrap {
                 height: clamp(350px, 40vh, 500px);
                 width: clamp(200px, 20vw, 300px);
                 border-bottom: 24px solid var(--2);
-                background: var(--back);
+                background-image: var(--back);
                 display: flex;
                 flex-grow: 1;
                 flex-direction: column;
@@ -118,7 +105,7 @@
                 content: "";
                 height: 48px;
                 width: 100%;
-                background: var(--shelf);
+                background-image: var(--shelf);
             }
 
             .book {
@@ -135,12 +122,16 @@
 
             .book:hover {
                 box-shadow: var(--shadow-elevation-high);
-                transform: rotateX(0deg) rotateY(-15deg) scale(1.05);
+                transform: rotateX(0deg) rotateY(-20deg) scale(1.08);
                 transform-style: preserve-3d;
             }
 
             .book img {
                 border: 1px solid var(--6);
+            }
+
+            .logo {
+                transform: scale(0.8);
             }
         </style>
     </head>
@@ -148,8 +139,11 @@
     <body>
         <div class="bookcase">
             <div class="topshelf">
-                <h1>My Bookcase</h1>
-                <p>My List of Recommended Reads</p>
+                <a href="index.html">
+                    <img class="logo" src="images/white-t.svg"
+                /></a>
+                <h1>Tanner's Bookcase</h1>
+                <p></p>
             </div>
             <div class="bookwrap">
                 <div class="book">
