@@ -1,197 +1,240 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<title>Tanner's Bookshelf</title>
-<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Tanner's Bookshelf</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap"
+            rel="stylesheet"
+        />
 
-<style type="text/css">
+        <style type="text/css">
+            html {
+                background: #141515;
+                background-image: url("images/noise.png");
+            }
 
-html {
-   background: #141515;
-  background-image: url("images/noise.png");
-  }
-  
+            /*BOOKSHELF*/
+            :root {
+                --1: #ffffff;
+                --2: #e0dfdb;
+                --3: #7f7f80;
+                --4: #222222;
+                --5: #3b3b3b;
+                --6: #111111;
 
-/*BOOKSHELF*/
-:root {
-  --1: #ffffff;
-  --2: #E0DFDB;
-  --3: #7f7f80;
-  --4: #222222;
-  --5: #3b3b3b;
-  --6: #111111;
+                --shadow-color: 44deg 8% 20%;
+                --shadow-elevation-low: 0px 0.2px 0.2px
+                        hsl(var(--shadow-color) / 0.39),
+                    0px 1px 1.2px -1.9px hsl(var(--shadow-color) / 0.51);
+                --shadow-elevation-medium: 0px 0.2px 0.2px
+                        hsl(var(--shadow-color) / 0.36),
+                    0px 1.3px 1.6px -0.9px hsl(var(--shadow-color) / 0.44),
+                    0.1px 4.8px 5.8px -1.9px hsl(var(--shadow-color) / 0.51);
+                --shadow-elevation-high: 0px 0.2px 0.2px
+                        hsl(var(--shadow-color) / 0.4),
+                    0px 2.7px 3.3px -0.5px hsl(var(--shadow-color) / 0.45),
+                    0.1px 5.9px 7.2px -0.9px hsl(var(--shadow-color) / 0.51),
+                    0.2px 12.2px 14.8px -1.4px hsl(var(--shadow-color) / 0.56),
+                    0.3px 23.7px 28.8px -1.9px hsl(var(--shadow-color) / 0.61);
 
-  --shadow-color: 44deg 8% 20%;
-  --shadow-elevation-low:
-    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.39),
-    0px 1px 1.2px -1.9px hsl(var(--shadow-color) / 0.51);
-  --shadow-elevation-medium:
-    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.36),
-    0px 1.3px 1.6px -0.9px hsl(var(--shadow-color) / 0.44),
-    0.1px 4.8px 5.8px -1.9px hsl(var(--shadow-color) / 0.51);
-  --shadow-elevation-high:
-    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.4),
-    0px 2.7px 3.3px -0.5px hsl(var(--shadow-color) / 0.45),
-    0.1px 5.9px 7.2px -0.9px hsl(var(--shadow-color) / 0.51),
-    0.2px 12.2px 14.8px -1.4px hsl(var(--shadow-color) / 0.56),
-    0.3px 23.7px 28.8px -1.9px hsl(var(--shadow-color) / 0.61);
+                --shelf: linear-gradient(
+                    0deg,
+                    rgba(62, 60, 58, 1) 0%,
+                    rgba(82, 80, 78, 1) 25%,
+                    rgba(82, 80, 78, 1) 75%,
+                    rgba(62, 60, 58, 1) 100%
+                );
+                --back: linear-gradient(
+                    0deg,
+                    rgba(72, 70, 68, 1) 0%,
+                    rgba(112, 110, 108, 1) 25%,
+                    rgba(112, 110, 108, 1) 75%,
+                    rgba(72, 70, 68, 1) 100%
+                );
+            }
 
-  --shelf: linear-gradient(
-    0deg,
-    rgba(62, 60, 58, 1) 0%,
-    rgba(82, 80, 78, 1) 25%,
-    rgba(82, 80, 78, 1) 75%,
-    rgba(62, 60, 58, 1) 100%
-  );
-   --back: linear-gradient(
-    0deg,
-    rgba(72, 70, 68, 1) 0%,
-    rgba(112, 110, 108, 1) 25%,
-    rgba(112, 110, 108, 1) 75%,
-    rgba(72, 70, 68, 1) 100%
-  );
+            body {
+                background: var(--2);
+                padding: 20px 20px 0px 20px;
+                border: 1px solid var(--1);
+                height: 100%;
+            }
 
+            .bookcase {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                background: var(--3);
+                padding: 0px 0px;
+                height: 100%;
+            }
 
-body {
-  background: var(--2);
-  padding: 20px 20px 0px 20px;
-  border: 1px solid var(--1);
-  height: 100%;
-}
+            .topshelf {
+                height: 200px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                background: var(--back);
+                border-bottom: 24px solid var(--2);
+            }
 
-.bookcase {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  background: var(--3);
-  padding: 0px 0px;
-  height: 100%;
+            .topshelf h1,
+            .topshelf p {
+                position: relative;
+                bottom: -30px;
+            }
 
-}
+            .topshelf::after {
+                content: "";
+                height: 48px;
+                width: 100%;
+                background: var(--shelf);
+            }
 
-.bookwrap {
-  height: clamp(350px, 40vh, 500px);
-  width: clamp(200px, 20vw, 300px);
-  border-bottom: 24px solid var(--2);
-  background: var(--back);
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0px;
-  margin: 0px;
-  perspective: 800px;
-  perspective-origin: left center;
-}
+            .bookwrap {
+                height: clamp(350px, 40vh, 500px);
+                width: clamp(200px, 20vw, 300px);
+                border-bottom: 24px solid var(--2);
+                background: var(--back);
+                display: flex;
+                flex-grow: 1;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding: 0px;
+                margin: 0px;
+                perspective: 800px;
+                perspective-origin: left center;
+            }
 
-.bookwrap::after {
-  content: "";
-  height: 48px;
-  width: 100%;
-  background: var(--shelf);
+            .bookwrap::after {
+                content: "";
+                height: 48px;
+                width: 100%;
+                background: var(--shelf);
+            }
 
-}
+            .book {
+                width: 150px;
+                min-height: 150px;
+                background: var(--6);
+                position: relative;
+                bottom: -24px;
+                margin: 0px;
+                box-shadow: var(--shadow-elevation-medium);
+                transition: all 0.2s;
+                transition-timing-function: ease-in-out;
+            }
 
-.book {
-  width: 150px;
-  min-height: 150px;
-  background: var(--6);
-  position: relative;
-  bottom: -24px;
-  margin: 0px;
-  box-shadow: var(--shadow-elevation-medium);
-  transition: all 0.2s;
-  transition-timing-function: ease-in-out;
-}
+            .book:hover {
+                box-shadow: var(--shadow-elevation-high);
+                transform: rotateX(0deg) rotateY(-15deg) scale(1.05);
+                transform-style: preserve-3d;
+            }
 
-.book:hover {
-  box-shadow: var(--shadow-elevation-high);
-  transform: rotateX(0deg) rotateY(-15deg) scale(1.05);
-  transform-style: preserve-3d;
-}
+            .book img {
+                border: 1px solid var(--6);
+            }
+        </style>
+    </head>
 
-.book img {
-  border: 1px solid var(--6);
-}
-
-
-
-
-</style>
-
-</head>
-
-
-<body>
-<div class="bookcase">
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/81jN2hzQg9L._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/31IZBzabP-L._SX342_SY445_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/5176ZejmyrL._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/61wNuShMlXL._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/71gnJ-dXgxL._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/81jWWukq-3L._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/51QNbULKwNL.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/615DcJOIL-L._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/A1OlSDr1xgL._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/71sjnMMv+CL._SY522_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/51xvqwJ1EJL._SY445_SX342_.jpg" />
-    </div>
-  </div>
-  <div class="bookwrap">
-    <div class="book">
-      <img src="https://m.media-amazon.com/images/I/41aX0fEkNwL._SY445_SX342_.jpg" />
-    </div>
-  </div>
-
-
-</div>
-</body>
+    <body>
+        <div class="bookcase">
+            <div class="topshelf">
+                <h1>My Bookcase</h1>
+                <p>My List of Recommended Reads</p>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/81jN2hzQg9L._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/31IZBzabP-L._SX342_SY445_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/5176ZejmyrL._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/61wNuShMlXL._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/71gnJ-dXgxL._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/81jWWukq-3L._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/51QNbULKwNL.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/615DcJOIL-L._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/A1OlSDr1xgL._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/71sjnMMv+CL._SY522_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/51xvqwJ1EJL._SY445_SX342_.jpg"
+                    />
+                </div>
+            </div>
+            <div class="bookwrap">
+                <div class="book">
+                    <img
+                        src="https://m.media-amazon.com/images/I/41aX0fEkNwL._SY445_SX342_.jpg"
+                    />
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
