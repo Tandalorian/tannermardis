@@ -5,7 +5,6 @@
     --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
     --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
     --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
-
     --creme: oklch(90% 0.01 90);
     --limegreen: oklch(80% 0.15 128);
     --midgreen: oklch(64% 0.14 157);
