@@ -18,7 +18,7 @@
                 }
             }
         </script>
-
+        <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
@@ -26,7 +26,18 @@
         />
 
         <style type="text/css">
-            @import "style.css";
+            :root {
+                --step--1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
+                --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+                --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
+                --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
+                --creme: oklch(90% 0.01 90);
+                --limegreen: oklch(80% 0.15 128);
+                --midgreen: oklch(64% 0.14 157);
+                --darkgreen: oklch(24% 0.03 180);
+                --blackgreen: oklch(18% 0.01 180);
+                --darkgrey: oklch(18% 0 180);
+            }
             @keyframes rotate {
                 from {
                     transform: rotate(-20deg);
@@ -51,7 +62,7 @@
             }
 
             .container {
-                padding: 10rem 10rem;
+                padding: 10% 10%;
             }
             .section1 {
                 display: flex;
