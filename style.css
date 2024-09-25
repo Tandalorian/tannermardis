@@ -10,6 +10,8 @@
     --limegreen: oklch(80% 0.15 128);
     --midgreen: oklch(64% 0.14 157);
     --darkgreen: oklch(24% 0.03 180);
+    --blackgreen: oklch(18% 0.01 180);
+    --darkgrey: oklch(18% 0 180);
 }
 
 /*
