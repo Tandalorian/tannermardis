@@ -1,10 +1,15 @@
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.333,1240,18,1.5,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
+/* Thanks to Josh Comeau for the updated CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
 :root {
     --step--1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
     --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
     --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
     --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
+
+    --creme: oklch(90% 0.01 90);
+    --limegreen: oklch(80% 0.15 128);
+    --midgreen: oklch(64% 0.14 157);
+    --darkgreen: oklch(24% 0.03 180);
 }
 
 /*
@@ -15,22 +20,24 @@
 *::after {
     box-sizing: border-box;
 }
+
 /*
   2. Remove default margin
 */
 * {
     margin: 0;
 }
+
 /*
   Typographic tweaks!
   3. Add accessible line-height
   4. Improve text rendering
 */
 body {
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-    padding: 0px;
 }
+
 /*
   5. Improve media defaults
 */
@@ -42,6 +49,7 @@ svg {
     display: block;
     max-width: 100%;
 }
+
 /*
   6. Remove built-in form typography styles
 */
@@ -51,6 +59,7 @@ textarea,
 select {
     font: inherit;
 }
+
 /*
   7. Avoid text overflows
 */
@@ -63,6 +72,7 @@ h5,
 h6 {
     overflow-wrap: break-word;
 }
+
 /*
   8. Create a root stacking context
 */
@@ -70,34 +80,14 @@ h6 {
 #__next {
     isolation: isolate;
 }
+/*
+  End Reset
+*/
 
 body {
     font-family: "rubik", sans-serif;
     font-size: var(--step-0);
-    color: #f0f0f0;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: "";
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    color: var(--creme);
 }
 
 h1 {
@@ -105,9 +95,7 @@ h1 {
     letter-spacing: 4px;
     text-transform: uppercase;
     font-size: var(--step-2);
-    margin: 20px 0px;
     text-align: center;
-    display: block;
 }
 
 a {

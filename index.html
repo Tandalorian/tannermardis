@@ -21,44 +21,55 @@
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
-        <script
-            src="https://kit.fontawesome.com/ed9c0cad80.js"
-            crossorigin="anonymous"
-        ></script>
 
         <style type="text/css">
-            html {
-                background: #0f1a19;
-                background-image: url("images/noise.png");
+            @keyframes rotate {
+                from {
+                    transform: rotate(-20deg);
+                }
+                to {
+                    transform: rotate(0deg);
+                }
+            }
+            @keyframes driftdown {
+                from {
+                    transform: translate(0px, -80px);
+                }
+                to {
+                    transform: translate(0px, 0px);
+                }
             }
 
-            div#container {
-                padding: 5rem 1rem;
-                overflow: hidden;
+            html {
+                background: var(--darkgreen);
+                background-image: url("images/noise.png");
+                background-size: 60px;
             }
-            div#header {
+
+            .container {
+                padding: 10rem 10rem;
+            }
+            .section1 {
+                display: flex;
+                justify-content: center;
+
+                align-items: center;
+                min-width: 500px;
+            }
+            .profile-pic {
                 background: url("images/tm-coffee.jpg") no-repeat;
                 background-size: cover;
                 object-fit: cover;
-                width: 18rem;
-                height: 18rem;
-                border-radius: clamp(24px, 10vw, 300px);
-                border: 1px solid #0b1412;
-                margin: 10% auto;
+                width: 500px;
+                height: 500px;
+                border-radius: 300px;
+                border: 1px solid var(--blackgreen);
             }
-            div#header svg {
-                position: relative;
-                top: -100px;
-                left: 100px;
-            }
-            div#section1 {
-                min-width: 300px;
-            }
-            div#section2 {
-                margin: 70px auto;
+            .section2 {
+                margin: 100px auto;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -66,58 +77,58 @@
                 gap: 32px;
                 max-width: 960px;
             }
-
-            #section2 a {
-                padding: 0.8em;
-                min-width: 9em;
-                position: relative;
+            a {
+                padding: 1rem 2rem;
+                min-width: 9rem;
                 text-align: center;
-                border: 1px solid #19a467;
+                border: 1px solid var(--midgreen);
                 border-radius: clamp(4px, 2vw, 50px);
-                display: block;
-                overflow: visible;
                 transition: all 0.2s ease-in-out;
+                text-transform: uppercase;
+                font-weight: 400;
+                letter-spacing: 2px;
             }
-
             a:hover {
-                color: #b0d16a;
+                color: var(--limegreen);
+                border: 1px solid var(--limegreen);
             }
-
-            .logo {
-                transform: scale(1.5);
-                position: relative;
-                right: -60%;
-                top: -140%;
+            .homelogo {
+                animation-name: driftdown;
+                animation-duration: 2s;
+                display: inline;
+                position: absolute;
+                top: -0px;
             }
             .circle-name {
-                transform: scale(1.4);
+                animation-name: rotate;
+                animation-duration: 2s;
+                display: inline;
+                position: absolute;
             }
         </style>
     </head>
 
     <body>
-        <div id="container">
-            <div id="header">
+        <div class="container">
+            <div class="section1">
                 <img
-                    class="circle-name"
                     src="images/circle-name.svg"
+                    class="circle-name"
                     alt="Tanner the Mardis"
                 />
-                <img class="logo" src="images/logo-filled.svg" />
-                <!--
-<img src="images/tm-photography@2x.jpg">
-<img src="images/tm-dribbble@2x.jpg">
-<img src="images/tm-twitter@2x.jpg">
-<img src="images/tm-book@2x.jpg">
-
-<img src="images/tm-jedi@2x.jpg">
-<img src="images/tm-jedi@2x.jpg">
--->
+                <img
+                    src="images/tm-coffee.jpg"
+                    class="profile-pic"
+                    alt="profile picture of tanner's lego minifigure"
+                />
+                <img
+                    src="images/logo-green.svg"
+                    class="homelogo"
+                    alt="Tanner Mardis Logo"
+                />
             </div>
 
-            <div id="section1"></div>
-
-            <div id="section2">
+            <div class="section2">
                 <a href="https://dribbble.com/tannermardis" target="blank">
                     <p>Dribbble</p>
                 </a>
