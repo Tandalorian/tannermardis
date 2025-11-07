@@ -14,145 +14,198 @@
                     "@type": "Organization",
                     "name": "Mardis Studio",
                     "url": "https://mardis.studio",
-                    "description": "Designed and developed by Mardis Studio."
+                    "description": "Designed and developed by Tanner the Mardis."
                 }
             }
         </script>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="global-style.css" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
-            rel="stylesheet"
-        />
-
         <style type="text/css">
-            :root {
-                --step--1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
-                --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
-                --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
-                --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
-                --creme: oklch(90% 0.01 90);
-                --limegreen: oklch(80% 0.15 128);
-                --midgreen: oklch(64% 0.14 157);
-                --darkgreen: oklch(24% 0.03 180);
-                --blackgreen: oklch(18% 0.01 180);
-                --darkgrey: oklch(18% 0 180);
-            }
-            @keyframes rotate {
-                from {
-                    transform: rotate(-20deg);
-                }
-                to {
-                    transform: rotate(0deg);
-                }
-            }
-            @keyframes driftdown {
-                from {
-                    transform: translate(0px, -80px);
-                }
-                to {
-                    transform: translate(0px, 0px);
-                }
-            }
-
-            html {
-                background: var(--darkgreen);
-                background-image: url("images/noise.png");
-                background-size: 60px;
-            }
             .container {
-                padding: 40px;
+                padding: var(--space-s);
+                margin: 0px;
+                display: grid;
+                grid-template-columns: 1fr 4fr 2fr;
+                gap: var(--space-s);
+            }
+            aside {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-l);
+                border: 1px solid var(--limegreen);
+                border-radius: var(--space-2xs);
+                padding: var(--space-l);
+            }
+            aside img {
+                max-width: 100px;
+            }
+            aside h1 {
+                margin: 0;
+                color: var(--midgreen);
+                writing-mode: vertical-rl;
+            }
+            main {
+                border: 1px solid var(--limegreen);
+                border-radius: var(--space-2xs);
+                background: url("images/tm-blank.webp");
+                background-size: cover;
+                background-position: center center;
+                transition: background 0.3s ease-in-out;
+                order: 1;
+            }
+            .container:has(nav a[href="#coffee"]:hover) main {
+                background-image: url("images/tm-coffee.webp");
+            }
+            .container:has(nav a[href="#jedi"]:hover) main {
+                background-image: url("images/tm-jedi.webp");
+            }
+            .container:has(nav a[href="https://dribbble.com/tannermardis"]:hover) main
+            {
+                background-image: url("images/tm-design.webp");
+            }
+            .container:has(nav a[href="/photos"]:hover) main {
+                background-image: url("images/tm-photo.webp");
+            }
+            .container:has(nav a[href="/bookshelf"]:hover) main {
+                background-image: url("images/tm-book.webp");
+            }
+            .container:has(nav a[href="#"]:hover) main {
+                background-image: url("images/tm-work.webp");
             }
 
-            .section1 {
+            .container:has(nav a[href="https://x.com/tannermardis"]:hover) main
+            {
+                background-image: url("images/tm-twitter.webp");
+            }
+
+            nav {
+                display: grid;
+                margin: 0;
+                padding: 0;
+                order: 2; /* Ensures visual order: nav after main in grid */
+            }
+
+            nav a:first-child {
+                border-radius: var(--space-2xs) var(--space-2xs) 0px 0px;
+            }
+            nav a:last-child {
+                border-radius: 0px 0px var(--space-2xs) var(--space-2xs);
+            }
+            nav a {
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                margin: 20% 0px 0px 0px;
-            }
-            .profile-pic {
-                object-fit: cover;
-                border-radius: 300px;
-                width: 500px;
-                border: 1px solid var(--blackgreen);
-            }
-            .section2 {
-                margin: 100px auto;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-                gap: 32px;
-                max-width: 960px;
-            }
-            a {
-                padding: 1rem 2rem;
-                min-width: 9rem;
-                text-align: center;
-                border: 1px solid var(--midgreen);
-                border-radius: clamp(4px, 2vw, 50px);
-                transition: all 0.2s ease-in-out;
-                text-transform: uppercase;
-                font-weight: 400;
-                letter-spacing: 2px;
-            }
-            a:hover {
-                color: var(--limegreen);
+                gap: var(--space-l);
+                padding: var(--space-s) var(--space-m);
                 border: 1px solid var(--limegreen);
+                border-radius: 0px;
+                background-color: var(--darkgreen);
+                cursor: pointer;
+                transition: all 0.3s ease-out;
+                text-transform: uppercase;
+                color: var(--midgreen);
+                font-weight: 400;
+                text-align: left;
+                letter-spacing: 2px;
+                width: 100%;
+                margin-bottom: -1px;
             }
-            .homelogo {
-                animation-name: driftdown;
-                animation-duration: 2s;
-                display: inline;
-                position: absolute;
-                top: 5%;
+            nav a:hover,
+            nav a:focus {
+                color: var(--creme);
+                border: 1px solid var(--limegreen);
+                gap: var(--space-m);
+                outline: none; /* Clean focus for accessibility */
             }
-            .circle-name {
-                animation-name: rotate;
-                animation-duration: 2s;
-                display: inline;
-                position: absolute;
+            @media (max-width: 800px) {
+                .container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+                aside {
+                    flex-direction: row;
+                }
+                aside h1 {
+                    writing-mode: horizontal-tb;
+                }
+                main {
+                    aspect-ratio: 1;
+                }
+                nav {
+                    order: 3; /* Stack nav last on mobile */
+                }
             }
         </style>
     </head>
-
     <body>
         <div class="container">
-            <div class="section1">
-                <img
-                    src="images/circle-name.svg"
-                    class="circle-name"
-                    alt="Tanner the Mardis"
-                />
-                <img
-                    src="images/tm-coffee.jpg"
-                    class="profile-pic"
-                    alt="profile picture of tanner's lego minifigure"
-                />
-                <img
-                    src="images/logo-green.svg"
-                    class="homelogo"
-                    alt="Tanner Mardis Logo"
-                />
-            </div>
-
-            <div class="section2">
-                <a href="https://dribbble.com/tannermardis" target="blank">
-                    <p>Dribbble</p>
+            <aside>
+                <img src="images/logo-green.svg" alt="Tanner Mardis Logo" />
+                <h1>Tanner the Mardis</h1>
+            </aside>
+            <!-- Reordered: nav first in DOM (for ~ selector), main second -->
+            <nav>
+                <a href="#coffee">
+                    <img
+                        src="images/icon-mug.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Coffee Drinkin'
                 </a>
-                <a href="https://x.com/tannermardis" target="blank">
-                    <p>Twitter</p>
+                <a href="#jedi">
+                    <img
+                        src="images/icon-starwars.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Star Wars Lovin'
                 </a>
-                <a href="/bookshelf">
-                    <p>Bookshelf</p>
+                <a href="https://dribbble.com/tannermardis" target="_blank">
+                    <img
+                        src="images/icon-pen.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Designer
                 </a>
                 <a href="/photos">
-                    <p>Photography</p>
+                    <img
+                        src="images/icon-camera.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Photographer
                 </a>
-                <!--<a href="https://tannermardis.com/photos">
-                    <p>Star Wars</p>
+                <a href="/bookshelf">
+                    <img
+                        src="images/icon-book.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Reader
+                </a>
+                <a href="#">
+                    <img
+                        src="images/icon-typewritter.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Writer
+                </a>
+                <!--<a href="https://github.com/tannermardis" target="_blank">
+                    <img
+                        src="images/icon-terminal.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Coder
                     </a>-->
-            </div>
+                <a href="https://x.com/tannermardis" target="_blank">
+                    <img
+                        src="images/icon-twitter.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />Poster
+                </a>
+            </nav>
+            <main
+                role="img"
+                aria-label="Tanner Mardis background preview"
+            ></main>
         </div>
     </body>
 </html>

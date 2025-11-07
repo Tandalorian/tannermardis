@@ -1,0 +1,163 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.333,1240,18,1.5,3,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+@font-face {
+    font-family: "Regular Bold";
+    src:
+        url("fonts/RegularXLSoft-BoldWEB.woff") format("woff"),
+        url("fonts/RegularXLSoft-BoldWEB.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Regular Medium";
+    src:
+        url("fonts/RegularXLSoft-MediumWEB.woff") format("woff"),
+        url("fonts/RegularXLSoft-MediumWEB.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --step-1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
+    --step0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    --step1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
+    --step2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
+    --step3: clamp(2.3686rem, 1.8718rem + 2.484vw, 3.7969rem);
+
+    /* Space 3xs: 4px → 5px */
+    --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+    /* Space 2xs: 8px → 9px */
+    --space-2xs: clamp(0.5rem, 0.4783rem + 0.1087vw, 0.5625rem);
+    /* Space xs: 12px → 14px */
+    --space-xs: clamp(0.75rem, 0.7065rem + 0.2174vw, 0.875rem);
+    /* Space s: 16px → 18px */
+    --space-s: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    /* Space m: 24px → 27px */
+    --space-m: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
+    /* Space l: 32px → 36px */
+    --space-l: clamp(2rem, 1.913rem + 0.4348vw, 2.25rem);
+    /* Space xl: 48px → 54px */
+    --space-xl: clamp(3rem, 2.8696rem + 0.6522vw, 3.375rem);
+    /* Space 2xl: 64px → 72px */
+    --space-2xl: clamp(4rem, 3.8261rem + 0.8696vw, 4.5rem);
+    /* Space 3xl: 96px → 108px */
+    --space-3xl: clamp(6rem, 5.7391rem + 1.3043vw, 6.75rem);
+
+    --creme: oklch(90% 0.01 90);
+    --limegreen: oklch(80% 0.15 128);
+    --midgreen: oklch(64% 0.14 157);
+    --darkgreen: oklch(24% 0.03 180);
+    --blackgreen: oklch(18% 0.01 180);
+    --darkgrey: oklch(18% 0 180);
+}
+
+/* Thanks to Josh Comeau for the updated CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+/*
+  End Reset
+*/
+html {
+    background: var(--darkgreen);
+    background-image: url("images/noise.png");
+    background-size: 60px;
+}
+body {
+    font-family: "rubik", sans-serif;
+    font-size: var(--step-0);
+    color: var(--creme);
+    font-family:
+        Regular Medium,
+        Helvetica,
+        sans-serif;
+}
+h1 {
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: var(--step3);
+    font-family:
+        Regular Bold,
+        Helvetica,
+        sans-serif;
+}
+
+a {
+    color: var(--creme);
+    text-decoration: none;
+}
+img {
+    border-radius: 2px;
+}

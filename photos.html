@@ -1,479 +1,1051 @@
 <!doctype html>
 
 <html>
+    <head>
+        <!--Thanks to Rahul at w3bits for his CSS Masonry Generator https://w3bits.com/tools/masonry-generator/-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="global-style.css" />
+        <link rel="stylesheet" href="simple-lightbox.css" />
+        <title>Tanner's Photography</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
-<head>
-<!--Thanks to Rahul at w3bits for his CSS Masonry Generator https://w3bits.com/tools/masonry-generator/-->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="stylesheet" href="simple-lightbox.css">
-<title>Tanner's Photography</title>
-<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+        <style type="text/css">
+            html {
+                background: var(--darkgrey);
+            }
 
-<style type="text/css">
-:root {
-    --step--1: clamp(0.75rem, 0.7503rem + -0.0003vw, 0.7502rem);
-    --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
-    --step-1: clamp(1.333rem, 1.2097rem + 0.6165vw, 1.6875rem);
-    --step-2: clamp(1.7769rem, 1.5145rem + 1.3119vw, 2.5313rem);
-    --creme: oklch(90% 0.01 90);
-    --limegreen: oklch(80% 0.15 128);
-    --midgreen: oklch(64% 0.14 157);
-    --darkgreen: oklch(24% 0.03 180);
-    --blackgreen: oklch(18% 0.01 180);
-    --darkgrey: oklch(18% 0 180);
-}
+            body {
+                background: var(--darkgrey);
+                background-image: url("images/noise.png");
+            }
 
-html {
-  background: var(--darkgrey);
-}
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
 
-body {
-  background: var(--darkgrey);
-  background-image: url("images/noise.png");
-}
+            .wrapper {
+                max-width: 1280px;
+                margin-right: auto;
+                margin-left: auto;
+                padding: var(--space-s);
+            }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+            .masonry-wrapper {
+                padding: var(--space-s);
+                max-width: 1440px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .masonry {
+                columns: 1;
+                column-gap: var(--space-3xs);
+            }
+            .masonry-item {
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: var(--space-3xs);
+            }
+            @media only screen and (max-width: 1023px) and (min-width: 768px) {
+                .masonry {
+                    columns: 2;
+                }
+            }
+            @media only screen and (min-width: 1024px) {
+                .masonry {
+                    columns: 3;
+                }
+            }
+            .masonry-item,
+            .masonry-content {
+                border-radius: var(--space-3xs);
+                overflow: hidden;
+                opacity: 1;
+                transition: all 0.2s ease-in-out;
+            }
 
-.wrapper {
-  max-width: 1280px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1.5em;
-}
+            .masonry-content:hover {
+                opacity: 0.7;
+            }
+        </style>
+    </head>
 
-.masonry-wrapper {
-  padding: 1.5em;
-  max-width: 1440px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.masonry {
-  columns: 1;
-  column-gap: 4px;
-}
-.masonry-item {
-  display: inline-block;
-  vertical-align: top;
-  margin-bottom: 4px;
-}
-@media only screen and (max-width: 1023px) and (min-width: 768px) {  .masonry {
-    columns: 2;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .masonry {
-    columns: 3;
-  }
-}
-.masonry-item, .masonry-content {
-  border-radius: 2px;
-  overflow: hidden;
-  opacity: 1;
-  transition: all 0.2s ease-in-out;
-}
+    <body>
+        <div class="masonry-wrapper">
+            <div class="masonry">
+                <div class="gallery">
+                    <div class="masonry-item">
+                        <a rel="rel1" href="https://tannermardis.com"
+                            ><img
+                                src="images/logo-white.svg"
+                                alt="logo"
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-117.jpg"
+                            ><img
+                                src="photos/image-117.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-116.jpg"
+                            ><img
+                                src="photos/image-116.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-115.jpg"
+                            ><img
+                                src="photos/image-115.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-114.jpg"
+                            ><img
+                                src="photos/image-114.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-113.jpg"
+                            ><img
+                                src="photos/image-113.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-112.jpg"
+                            ><img
+                                src="photos/image-112.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-111.jpg"
+                            ><img
+                                src="photos/image-111.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
 
-.masonry-content:hover {
-    opacity: .7;
-}
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-110.jpg"
+                            ><img
+                                src="photos/image-110.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-109.jpg"
+                            ><img
+                                src="photos/image-109.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-108.jpg"
+                            ><img
+                                src="photos/image-108.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-107.jpg"
+                            ><img
+                                src="photos/image-107.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-106.jpg"
+                            ><img
+                                src="photos/image-106.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-105.jpg"
+                            ><img
+                                src="photos/image-105.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-104.jpg"
+                            ><img
+                                src="photos/image-104.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-103.jpg"
+                            ><img
+                                src="photos/image-103.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-102.jpg"
+                            ><img
+                                src="photos/image-102.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-101.jpg"
+                            ><img
+                                src="photos/image-101.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
 
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-100.jpg"
+                            ><img
+                                src="photos/image-100.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-99.jpg"
+                            ><img
+                                src="photos/image-99.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-98.jpg"
+                            ><img
+                                src="photos/image-98.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-97.jpg"
+                            ><img
+                                src="photos/image-97.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-96.jpg"
+                            ><img
+                                src="photos/image-96.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-95.jpg"
+                            ><img
+                                src="photos/image-95.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-94.jpg"
+                            ><img
+                                src="photos/image-94.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-93.jpg"
+                            ><img
+                                src="photos/image-93.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-92.jpg"
+                            ><img
+                                src="photos/image-92.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-91.jpg"
+                            ><img
+                                src="photos/image-91.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
 
-</style>
-</head>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-90.jpg"
+                            ><img
+                                src="photos/image-90.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-89.jpg"
+                            ><img
+                                src="photos/image-89.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-88.jpg"
+                            ><img
+                                src="photos/image-88.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-87.jpg"
+                            ><img
+                                src="photos/image-87.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-86.jpg"
+                            ><img
+                                src="photos/image-86.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-85.jpg"
+                            ><img
+                                src="photos/image-85.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-84.jpg"
+                            ><img
+                                src="photos/image-84.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-83.jpg"
+                            ><img
+                                src="photos/image-83.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-82.jpg"
+                            ><img
+                                src="photos/image-82.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-81.jpg"
+                            ><img
+                                src="photos/image-81.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
 
-<body>
-<div class="masonry-wrapper">
-  <div class="masonry">
-    <div class="gallery">
-        <div class="masonry-item">
-          <a rel="rel1" href="https://tannermardis.com"><img src="images/white-t.svg" alt="logo" class="masonry-content"></a>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-80.jpg"
+                            ><img
+                                src="photos/image-80.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-79.jpg"
+                            ><img
+                                src="photos/image-79.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-78.jpg"
+                            ><img
+                                src="photos/image-78.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-77.jpg"
+                            ><img
+                                src="photos/image-77.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-76.jpg"
+                            ><img
+                                src="photos/image-76.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-75.jpg"
+                            ><img
+                                src="photos/image-75.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-74.jpg"
+                            ><img
+                                src="photos/image-74.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-73.jpg"
+                            ><img
+                                src="photos/image-73.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-72.jpg"
+                            ><img
+                                src="photos/image-72.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-71.jpg"
+                            ><img
+                                src="photos/image-71.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-70.jpg"
+                            ><img
+                                src="photos/image-70.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-69.jpg"
+                            ><img
+                                src="photos/image-69.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-68.jpg"
+                            ><img
+                                src="photos/image-68.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-67.jpg"
+                            ><img
+                                src="photos/image-67.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-66.jpg"
+                            ><img
+                                src="photos/image-66.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-65.jpg"
+                            ><img
+                                src="photos/image-65.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-64.jpg"
+                            ><img
+                                src="photos/image-64.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-63.jpg"
+                            ><img
+                                src="photos/image-63.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-62.jpg"
+                            ><img
+                                src="photos/image-62.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-61.jpg"
+                            ><img
+                                src="photos/image-61.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-60.jpg"
+                            ><img
+                                src="photos/image-60.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-59.jpg"
+                            ><img
+                                src="photos/image-59.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-58.jpg"
+                            ><img
+                                src="photos/image-58.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-57.jpg"
+                            ><img
+                                src="photos/image-57.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-56.jpg"
+                            ><img
+                                src="photos/image-56.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-55.jpg"
+                            ><img
+                                src="photos/image-55.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-54.jpg"
+                            ><img
+                                src="photos/image-54.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-53.jpg"
+                            ><img
+                                src="photos/image-53.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-52.jpg"
+                            ><img
+                                src="photos/image-52.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-51.jpg"
+                            ><img
+                                src="photos/image-51.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-50.jpg"
+                            ><img
+                                src="photos/image-50.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-49.jpg"
+                            ><img
+                                src="photos/image-49.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-48.jpg"
+                            ><img
+                                src="photos/image-48.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-47.jpg"
+                            ><img
+                                src="photos/image-47.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-46.jpg"
+                            ><img
+                                src="photos/image-46.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-45.jpg"
+                            ><img
+                                src="photos/image-45.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-44.jpg"
+                            ><img
+                                src="photos/image-44.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-43.jpg"
+                            ><img
+                                src="photos/image-43.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-42.jpg"
+                            ><img
+                                src="photos/image-42.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-41.jpg"
+                            ><img
+                                src="photos/image-41.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-40.jpg"
+                            ><img
+                                src="photos/image-40.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-39.jpg"
+                            ><img
+                                src="photos/image-39.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-38.jpg"
+                            ><img
+                                src="photos/image-38.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-37.jpg"
+                            ><img
+                                src="photos/image-37.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-36.jpg"
+                            ><img
+                                src="photos/image-36.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-35.jpg"
+                            ><img
+                                src="photos/image-35.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-34.jpg"
+                            ><img
+                                src="photos/image-34.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-33.jpg"
+                            ><img
+                                src="photos/image-33.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-32.jpg"
+                            ><img
+                                src="photos/image-32.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-31.jpg"
+                            ><img
+                                src="photos/image-31.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-30.jpg"
+                            ><img
+                                src="photos/image-30.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-29.jpg"
+                            ><img
+                                src="photos/image-29.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-28.jpg"
+                            ><img
+                                src="photos/image-28.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-27.jpg"
+                            ><img
+                                src="photos/image-27.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-26.jpg"
+                            ><img
+                                src="photos/image-26.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-25.jpg"
+                            ><img
+                                src="photos/image-25.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-24.jpg"
+                            ><img
+                                src="photos/image-24.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-23.jpg"
+                            ><img
+                                src="photos/image-23.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-22.jpg"
+                            ><img
+                                src="photos/image-22.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-21.jpg"
+                            ><img
+                                src="photos/image-21.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-20.jpg"
+                            ><img
+                                src="photos/image-20.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-19.jpg"
+                            ><img
+                                src="photos/image-19.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-18.jpg"
+                            ><img
+                                src="photos/image-18.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-17.jpg"
+                            ><img
+                                src="photos/image-17.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-16.jpg"
+                            ><img
+                                src="photos/image-16.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-15.jpg"
+                            ><img
+                                src="photos/image-15.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-14.jpg"
+                            ><img
+                                src="photos/image-14.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-13.jpg"
+                            ><img
+                                src="photos/image-13.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-12.jpg"
+                            ><img
+                                src="photos/image-12.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-11.jpg"
+                            ><img
+                                src="photos/image-11.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-10.jpg"
+                            ><img
+                                src="photos/image-10.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-9.jpg"
+                            ><img
+                                src="photos/image-9.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-8.jpg"
+                            ><img
+                                src="photos/image-8.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-7.jpg"
+                            ><img
+                                src="photos/image-7.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-6.jpg"
+                            ><img
+                                src="photos/image-6.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-5.jpg"
+                            ><img
+                                src="photos/image-5.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-4.jpg"
+                            ><img
+                                src="photos/image-4.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-3.jpg"
+                            ><img
+                                src="photos/image-3.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-2.jpg"
+                            ><img
+                                src="photos/image-2.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                    <div class="masonry-item">
+                        <a rel="rel1" href="photos/image-1.jpg"
+                            ><img
+                                src="photos/image-1.jpg"
+                                alt=""
+                                class="masonry-content"
+                        /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>All Photography &copy; Tanner Mardis</p>
+            </div>
         </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-117.jpg"><img src="photos/image-117.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-116.jpg"><img src="photos/image-116.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-115.jpg"><img src="photos/image-115.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-114.jpg"><img src="photos/image-114.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-113.jpg"><img src="photos/image-113.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-112.jpg"><img src="photos/image-112.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-111.jpg"><img src="photos/image-111.jpg" alt="" class="masonry-content"></a>
-      </div>
 
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-110.jpg"><img src="photos/image-110.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-109.jpg"><img src="photos/image-109.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-108.jpg"><img src="photos/image-108.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-107.jpg"><img src="photos/image-107.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-106.jpg"><img src="photos/image-106.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-105.jpg"><img src="photos/image-105.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-104.jpg"><img src="photos/image-104.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-103.jpg"><img src="photos/image-103.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-102.jpg"><img src="photos/image-102.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-101.jpg"><img src="photos/image-101.jpg" alt="" class="masonry-content"></a>
-      </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="simple-lightbox.jquery.js" type="text/javascript"></script>
+        <script src="simple-lightbox.js" type="text/javascript"></script>
 
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-100.jpg"><img src="photos/image-100.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-99.jpg"><img src="photos/image-99.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-98.jpg"><img src="photos/image-98.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-97.jpg"><img src="photos/image-97.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-96.jpg"><img src="photos/image-96.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-95.jpg"><img src="photos/image-95.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-94.jpg"><img src="photos/image-94.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-93.jpg"><img src="photos/image-93.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-92.jpg"><img src="photos/image-92.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-91.jpg"><img src="photos/image-91.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-90.jpg"><img src="photos/image-90.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-89.jpg"><img src="photos/image-89.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-88.jpg"><img src="photos/image-88.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-87.jpg"><img src="photos/image-87.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-86.jpg"><img src="photos/image-86.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-85.jpg"><img src="photos/image-85.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-84.jpg"><img src="photos/image-84.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-83.jpg"><img src="photos/image-83.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-82.jpg"><img src="photos/image-82.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-81.jpg"><img src="photos/image-81.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-80.jpg"><img src="photos/image-80.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-79.jpg"><img src="photos/image-79.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-78.jpg"><img src="photos/image-78.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-77.jpg"><img src="photos/image-77.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-76.jpg"><img src="photos/image-76.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-75.jpg"><img src="photos/image-75.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-74.jpg"><img src="photos/image-74.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-73.jpg"><img src="photos/image-73.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-72.jpg"><img src="photos/image-72.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-71.jpg"><img src="photos/image-71.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-70.jpg"><img src="photos/image-70.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-69.jpg"><img src="photos/image-69.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-68.jpg"><img src="photos/image-68.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-67.jpg"><img src="photos/image-67.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-66.jpg"><img src="photos/image-66.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-65.jpg"><img src="photos/image-65.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-64.jpg"><img src="photos/image-64.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-63.jpg"><img src="photos/image-63.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-62.jpg"><img src="photos/image-62.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-61.jpg"><img src="photos/image-61.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-60.jpg"><img src="photos/image-60.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-59.jpg"><img src="photos/image-59.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-58.jpg"><img src="photos/image-58.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-57.jpg"><img src="photos/image-57.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-56.jpg"><img src="photos/image-56.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-55.jpg"><img src="photos/image-55.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-54.jpg"><img src="photos/image-54.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-53.jpg"><img src="photos/image-53.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-52.jpg"><img src="photos/image-52.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-51.jpg"><img src="photos/image-51.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-50.jpg"><img src="photos/image-50.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-49.jpg"><img src="photos/image-49.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-48.jpg"><img src="photos/image-48.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-47.jpg"><img src="photos/image-47.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-46.jpg"><img src="photos/image-46.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-45.jpg"><img src="photos/image-45.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-44.jpg"><img src="photos/image-44.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-43.jpg"><img src="photos/image-43.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-42.jpg"><img src="photos/image-42.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-41.jpg"><img src="photos/image-41.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-40.jpg"><img src="photos/image-40.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-39.jpg"><img src="photos/image-39.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-38.jpg"><img src="photos/image-38.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-37.jpg"><img src="photos/image-37.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-36.jpg"><img src="photos/image-36.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-35.jpg"><img src="photos/image-35.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-34.jpg"><img src="photos/image-34.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-33.jpg"><img src="photos/image-33.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-32.jpg"><img src="photos/image-32.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-31.jpg"><img src="photos/image-31.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-30.jpg"><img src="photos/image-30.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-29.jpg"><img src="photos/image-29.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-28.jpg"><img src="photos/image-28.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-27.jpg"><img src="photos/image-27.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-26.jpg"><img src="photos/image-26.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-25.jpg"><img src="photos/image-25.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-24.jpg"><img src="photos/image-24.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-23.jpg"><img src="photos/image-23.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-22.jpg"><img src="photos/image-22.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-21.jpg"><img src="photos/image-21.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-20.jpg"><img src="photos/image-20.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-19.jpg"><img src="photos/image-19.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-18.jpg"><img src="photos/image-18.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-17.jpg"><img src="photos/image-17.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-16.jpg"><img src="photos/image-16.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-15.jpg"><img src="photos/image-15.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-14.jpg"><img src="photos/image-14.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-13.jpg"><img src="photos/image-13.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-12.jpg"><img src="photos/image-12.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-11.jpg"><img src="photos/image-11.jpg" alt="" class="masonry-content"></a>
-      </div>
-
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-10.jpg"><img src="photos/image-10.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-9.jpg"><img src="photos/image-9.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-8.jpg"><img src="photos/image-8.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-7.jpg"><img src="photos/image-7.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-6.jpg"><img src="photos/image-6.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-5.jpg"><img src="photos/image-5.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-4.jpg"><img src="photos/image-4.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-3.jpg"><img src="photos/image-3.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-2.jpg"><img src="photos/image-2.jpg" alt="" class="masonry-content"></a>
-      </div>
-      <div class="masonry-item">
-        <a rel="rel1" href="photos/image-1.jpg"><img src="photos/image-1.jpg" alt="" class="masonry-content"></a>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <p>&copy; Tanner Mardis | Created with &#10084;</p>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="simple-lightbox.jquery.js" type="text/javascript"></script>
-<script src="simple-lightbox.js" type="text/javascript"></script>
-
-<script>
-    (function() {
-        var $gallery = new SimpleLightbox('.gallery a', {});
-    })();
-</script>
-
-
-</body>
+        <script>
+            (function () {
+                var $gallery = new SimpleLightbox(".gallery a", {});
+            })();
+        </script>
+    </body>
 </html>
