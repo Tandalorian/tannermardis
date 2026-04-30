@@ -1,0 +1,98 @@
+{{ define "title" }}Writing — Tanner Mardis{{ end }}
+
+{{ define "head" }}
+<style type="text/css">
+    .posts-container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: var(--space-xl) var(--space-s);
+    }
+
+    .posts-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-m);
+        margin-bottom: var(--space-xl);
+        border-bottom: 1px solid var(--limegreen);
+        padding-bottom: var(--space-m);
+    }
+
+    .posts-header img {
+        max-width: 60px;
+    }
+
+    .post-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+    }
+
+    .post-item a {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3xs);
+        padding: var(--space-m);
+        border: 1px solid var(--limegreen);
+        border-radius: var(--space-2xs);
+        transition: all 0.2s ease-out;
+        color: var(--midgreen);
+    }
+
+    .post-item a:hover {
+        color: var(--creme);
+        border-color: var(--limegreen);
+    }
+
+    .post-title {
+        font-size: var(--step1);
+        font-family: Regular Bold, Helvetica, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .post-date {
+        font-size: var(--step-1);
+        color: var(--midgreen);
+        opacity: 0.7;
+    }
+
+    .post-summary {
+        color: var(--creme);
+        margin-top: var(--space-3xs);
+    }
+
+    .empty-state {
+        color: var(--midgreen);
+        opacity: 0.6;
+        padding: var(--space-xl) 0;
+        text-align: center;
+    }
+</style>
+{{ end }}
+
+{{ define "body" }}
+<div class="posts-container">
+    <div class="posts-header">
+        <a href="/"><img src="/images/logo-white.svg" alt="Tanner Mardis Logo" /></a>
+        <h1>Writing</h1>
+    </div>
+    {{ if .Pages }}
+    <ul class="post-list">
+        {{ range .Pages.ByDate.Reverse }}
+        <li class="post-item">
+            <a href="{{ .Permalink }}">
+                <span class="post-title">{{ .Title }}</span>
+                <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                {{ if .Summary }}<p class="post-summary">{{ .Summary }}</p>{{ end }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    {{ else }}
+    <p class="empty-state">No posts yet — check back soon.</p>
+    {{ end }}
+</div>
+{{ end }}

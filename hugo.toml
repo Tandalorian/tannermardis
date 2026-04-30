@@ -1,0 +1,6 @@
+baseURL = "https://tannermardis.com"
+locale = "en-us"
+title = "Tanner the Mardis"
+
+[taxonomies]
+  # No taxonomies used — disable defaults to avoid empty pages
