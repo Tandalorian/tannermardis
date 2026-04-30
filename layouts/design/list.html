@@ -1,0 +1,107 @@
+{{ define "title" }}Design — Tanner Mardis{{ end }}
+
+{{ define "head" }}
+<link rel="stylesheet" href="/simple-lightbox.css" />
+<style type="text/css">
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    html {
+        background: var(--darkgrey);
+    }
+
+    body {
+        background: var(--darkgrey);
+        background-image: url("/images/noise.png");
+        padding: 0;
+        &::after {
+            content: '';
+            display: block;
+            height: 100vh;
+        }
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    .masonry-wrapper {
+        padding: var(--space-s);
+        max-width: 1440px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .masonry {
+        columns: 1;
+        column-gap: var(--space-3xs);
+    }
+
+    .masonry-item {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: var(--space-3xs);
+        animation: fadeIn linear, fadeOut linear;
+        animation-timeline: view(), view();
+        animation-range: entry, exit;
+    }
+
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+        .masonry { columns: 2; }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .masonry { columns: 3; }
+    }
+
+    .masonry-item,
+    .masonry-content {
+        border-radius: var(--space-3xs);
+        overflow: hidden;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .masonry-content:hover {
+        opacity: 0.7;
+    }
+</style>
+{{ end }}
+
+{{ define "body" }}
+<div class="masonry-wrapper">
+    <div class="masonry">
+        <div class="gallery">
+            <div class="masonry-item">
+                <a rel="rel1" href="/">
+                    <img src="/images/logo-white.svg" alt="logo" class="masonry-content" />
+                </a>
+            </div>
+            {{ range hugo.Data.design }}
+            <div class="masonry-item">
+                <a rel="rel1" href="{{ .file }}">
+                    <img src="{{ .file }}" alt="{{ .title }}" class="masonry-content" />
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="/simple-lightbox.jquery.js" type="text/javascript"></script>
+<script src="/simple-lightbox.js" type="text/javascript"></script>
+<script>
+    (function () {
+        var $gallery = new SimpleLightbox(".gallery a", {});
+    })();
+</script>
+{{ end }}
