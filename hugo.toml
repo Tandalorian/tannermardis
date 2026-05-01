@@ -2,5 +2,10 @@ baseURL = "https://tannermardis.com"
 locale = "en-us"
 title = "Tanner the Mardis"
 
+[params]
+  description = "Designer & Photographer, Based in Texas."
+  image = "/images/og-image.png"
+  twitterHandle = "@tannermardis"
+
 [taxonomies]
   # No taxonomies used — disable defaults to avoid empty pages

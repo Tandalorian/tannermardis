@@ -6,6 +6,25 @@
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/global-style.css" />
+
+        <!-- SEO -->
+        <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+        <meta property="og:title" content="{{ block "title" . }}{{ .Site.Title }}{{ end }}" />
+        <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+        <meta property="og:url" content="{{ .Permalink }}" />
+        <meta property="og:image" content="{{ .Site.BaseURL }}{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.Params.image }}{{ end }}" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="{{ if .Params.image }}summary_large_image{{ else }}summary{{ end }}" />
+        <meta name="twitter:site" content="{{ .Site.Params.twitterHandle }}" />
+        <meta name="twitter:creator" content="{{ .Site.Params.twitterHandle }}" />
+        <meta name="twitter:title" content="{{ block "title" . }}{{ .Site.Title }}{{ end }}" />
+        <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.Params.image }}{{ end }}" />
+
         {{ block "head" . }}{{ end }}
     </head>
     <body>

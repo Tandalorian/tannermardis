@@ -1,6 +1,7 @@
 ---
 title: "Steeped In Design"
 date: 2026-05-01
+image: "/images/tm-coffee.webp"
 ---
 Invite yourself on a tea party or coffee date with the best designs you can find. Go enjoy their company.
 <!--more-->
