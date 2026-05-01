@@ -2,23 +2,50 @@
 
 {{ define "head" }}
 <style type="text/css">
-    .posts-container {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: var(--space-xl) var(--space-s);
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
     }
 
-    .posts-header {
+    body {
+        min-height: 100vh;
+    }
+
+    .posts-layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        min-height: 100vh;
+    }
+
+    /* Left sticky column */
+    .posts-sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
         display: flex;
-        align-items: center;
-        gap: var(--space-m);
-        margin-bottom: var(--space-xl);
-        border-bottom: 1px solid var(--limegreen);
-        padding-bottom: var(--space-m);
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: var(--space-l);
+        padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-l);
+
     }
 
-    .posts-header img {
+    .posts-sidebar a img {
         max-width: 60px;
+    }
+
+    .posts-sidebar h1 {
+        color: var(--midgreen);
+        line-height: 1.1;
+    }
+
+    /* Right scrolling column */
+    .posts-content {
+        padding: var(--space-xl) var(--space-l);
     }
 
     .post-list {
@@ -30,12 +57,18 @@
         gap: var(--space-m);
     }
 
+    .post-item {
+        animation: fadeIn linear, fadeOut linear;
+        animation-timeline: view(), view();
+        animation-range: entry, exit;
+    }
+
     .post-item a {
         display: flex;
         flex-direction: column;
         gap: var(--space-3xs);
         padding: var(--space-m);
-        border: 1px solid var(--limegreen);
+        border: 1px solid transparent;
         border-radius: var(--space-2xs);
         transition: all 0.2s ease-out;
         color: var(--midgreen);
@@ -51,12 +84,7 @@
         font-family: Regular Bold, Helvetica, sans-serif;
         text-transform: uppercase;
         letter-spacing: 2px;
-    }
-
-    .post-date {
-        font-size: var(--step-1);
-        color: var(--midgreen);
-        opacity: 0.7;
+        color: var(--creme);
     }
 
     .post-summary {
@@ -68,30 +96,60 @@
         color: var(--midgreen);
         opacity: 0.6;
         padding: var(--space-xl) 0;
-        text-align: center;
+    }
+
+    @media (max-width: 800px) {
+        .posts-layout {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+        }
+
+        .posts-sidebar {
+            position: static;
+            height: auto;
+            border-right: none;
+            padding: var(--space-s);
+            flex-direction: row;
+            align-items: center;
+            gap: var(--space-s);
+        }
+
+        .posts-sidebar a img {
+            max-width: 36px;
+        }
+
+        .posts-sidebar h1 {
+            font-size: var(--step0);
+        }
+
+        .posts-content {
+            padding: var(--space-l) var(--space-s);
+        }
     }
 </style>
 {{ end }}
 
 {{ define "body" }}
-<div class="posts-container">
-    <div class="posts-header">
+<div class="posts-layout">
+    <aside class="posts-sidebar">
         <a href="/"><img src="/images/logo-white.svg" alt="Tanner Mardis Logo" /></a>
-        <h1>Writing</h1>
-    </div>
-    {{ if .Pages }}
-    <ul class="post-list">
-        {{ range .Pages.ByDate.Reverse }}
-        <li class="post-item">
-            <a href="{{ .Permalink }}">
-                <span class="post-title">{{ .Title }}</span>
-                {{ if .Summary }}<p class="post-summary">{{ .Summary }}</p>{{ end }}
-            </a>
-        </li>
+        <h1>Tanner's<br>Thoughts on</h1>
+    </aside>
+    <div class="posts-content">
+        {{ if .Pages }}
+        <ul class="post-list">
+            {{ range .Pages.ByDate.Reverse }}
+            <li class="post-item">
+                <a href="{{ .Permalink }}">
+                    <span class="post-title">{{ .Title }}</span>
+                    {{ if .Summary }}<p class="post-summary">{{ .Summary }}</p>{{ end }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ else }}
+        <p class="empty-state">No posts yet — check back soon.</p>
         {{ end }}
-    </ul>
-    {{ else }}
-    <p class="empty-state">No posts yet — check back soon.</p>
-    {{ end }}
+    </div>
 </div>
 {{ end }}

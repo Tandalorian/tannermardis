@@ -1,5 +1,5 @@
 ---
-title: "Steeped In Design"
+title: "Steeping In Design"
 date: 2026-05-01
 image: "/images/tm-coffee.webp"
 ---
