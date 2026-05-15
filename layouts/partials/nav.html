@@ -1,0 +1,24 @@
+{{ $iconsOnly := .iconsOnly | default false }}
+<nav class="{{ if $iconsOnly }}nav-icons-only{{ else }}nav-with-text{{ end }}">
+    <a href="/">
+        <img src="/images/icon-mug.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Coffee Drinkin'{{ end }}
+    </a>
+    <a href="#jedi">
+        <img src="/images/icon-starwars.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Star Wars Lovin'{{ end }}
+    </a>
+    <a href="/design">
+        <img src="/images/icon-pen.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Pixel Pushing{{ end }}
+    </a>
+    <a href="/photos">
+        <img src="/images/icon-camera.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Photo Taking{{ end }}
+    </a>
+    <a href="/bookshelf">
+        <img src="/images/icon-book.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Reading{{ end }}
+    </a>
+    <a href="/posts">
+        <img src="/images/icon-typewritter.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Writing{{ end }}
+    </a>
+    <a href="https://x.com/tannermardis" target="_blank">
+        <img src="/images/icon-twitter.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Tweeter{{ end }}
+    </a>
+</nav>

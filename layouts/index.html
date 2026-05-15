@@ -30,6 +30,7 @@
         display: grid;
         grid-template-columns: 1fr 4fr 2fr;
         gap: var(--space-s);
+        height: 100dvh;
     }
     aside {
         display: flex;
@@ -47,6 +48,7 @@
         margin: 0;
         color: var(--midgreen);
         writing-mode: vertical-rl;
+        font-size: 5vh;
     }
     main {
         border: 1px solid var(--limegreen);
@@ -57,64 +59,7 @@
         transition: background 0.3s ease-in-out;
         order: 1;
     }
-    .container:has(nav a[href="#coffee"]:hover) main {
-        background-image: url("/images/tm-coffee.webp");
-    }
-    .container:has(nav a[href="#jedi"]:hover) main {
-        background-image: url("/images/tm-jedi.webp");
-    }
-    .container:has(nav a[href="/design"]:hover) main {
-        background-image: url("/images/tm-design.webp");
-    }
-    .container:has(nav a[href="/photos"]:hover) main {
-        background-image: url("/images/tm-photo.webp");
-    }
-    .container:has(nav a[href="/bookshelf"]:hover) main {
-        background-image: url("/images/tm-book.webp");
-    }
-    .container:has(nav a[href="/posts"]:hover) main {
-        background-image: url("/images/tm-work.webp");
-    }
-    .container:has(nav a[href="https://x.com/tannermardis"]:hover) main {
-        background-image: url("/images/tm-twitter.webp");
-    }
-    nav {
-        display: grid;
-        margin: 0;
-        padding: 0;
-        order: 2;
-    }
-    nav a:first-child {
-        border-radius: var(--space-2xs) var(--space-2xs) 0px 0px;
-    }
-    nav a:last-child {
-        border-radius: 0px 0px var(--space-2xs) var(--space-2xs);
-    }
-    nav a {
-        display: flex;
-        align-items: center;
-        gap: var(--space-l);
-        padding: var(--space-s) var(--space-m);
-        border: 1px solid var(--limegreen);
-        border-radius: 0px;
-        cursor: pointer;
-        transition: all 0.3s ease-out;
-        text-transform: uppercase;
-        color: var(--midgreen);
-        font-weight: 400;
-        text-align: left;
-        letter-spacing: 2px;
-        width: 100%;
-        margin-bottom: -1px;
-    }
-    nav a:hover,
-    nav a:focus {
-        color: var(--creme);
-        border: 1px solid var(--limegreen);
-        gap: var(--space-m);
-        outline: none;
-        background-color: oklch(from var(--blackgreen) l c h / 0.5);
-    }
+
     @media (max-width: 800px) {
         .container {
             display: grid;
@@ -126,9 +71,6 @@
         main {
             aspect-ratio: 1;
         }
-        nav {
-            order: 3;
-        }
     }
 </style>
 {{ end }}
@@ -139,32 +81,7 @@
         <img src="/images/logo-green.svg" alt="Tanner Mardis Logo" />
         <h1>Tanner the Mardis</h1>
     </aside>
-    <nav>
-        <a href="#coffee">
-            <img src="/images/icon-mug.svg" alt="" aria-hidden="true" />Coffee Drinkin'
-        </a>
-        <a href="#jedi">
-            <img src="/images/icon-starwars.svg" alt="" aria-hidden="true" />Star Wars Lovin'
-        </a>
-        <a href="/design">
-            <img src="/images/icon-pen.svg" alt="" aria-hidden="true" />Pixel Pushing
-        </a>
-        <a href="/photos">
-            <img src="/images/icon-camera.svg" alt="" aria-hidden="true" />Photo Taking
-        </a>
-        <a href="/bookshelf">
-            <img src="/images/icon-book.svg" alt="" aria-hidden="true" />Reading
-        </a>
-        <a href="/posts">
-            <img src="/images/icon-typewritter.svg" alt="" aria-hidden="true" />Writing
-        </a>
-        <!--<a href="https://github.com/tannermardis" target="_blank">
-            <img src="/images/icon-terminal.svg" alt="" aria-hidden="true" />Coder
-        </a>-->
-        <a href="https://x.com/tannermardis" target="_blank">
-            <img src="/images/icon-twitter.svg" alt="" aria-hidden="true" />Tweeter
-        </a>
-    </nav>
+    {{ partial "nav.html" (dict "iconsOnly" false) }}
     <main role="img" aria-label="Tanner Mardis background preview"></main>
 </div>
 {{ end }}

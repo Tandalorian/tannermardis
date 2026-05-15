@@ -2,10 +2,27 @@
 
 {{ define "head" }}
 <style type="text/css">
-    .post-container {
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+   background-color: var(--darkgreen);
+}
+
+.container {
+    padding: var(--space-s);
+    margin: 0px;
+}
+.post-container {
         max-width: 720px;
         margin: 0 auto;
-        padding: var(--space-xl) var(--space-s);
+        padding: var(--space-l) var(--space-l);
+        border: 1px solid;
+        border-color: var(--limegreen);
+        border-radius: var(--space-2xs);
+        background-color: var(--darkgreen);
     }
 
     .post-nav {
@@ -19,6 +36,9 @@
 
     .post-nav img {
         max-width: 60px;
+        animation: fadeIn linear;
+        animation-timeline: view();
+        animation-range: entry;
     }
 
     .post-nav a {
@@ -52,15 +72,25 @@
         line-height: 1.8;
     }
 
+    .post-content > *:last-child {
+       margin-bottom: 0px;
+    }
+
     .post-content h2,
     .post-content h3 {
         color: var(--limegreen);
         margin-top: var(--space-xl);
         margin-bottom: var(--space-s);
+        animation: fadeIn linear;
+        animation-timeline: view();
+        animation-range: cover 0% cover 50%;
     }
 
     .post-content p {
         margin-bottom: var(--space-m);
+        animation: fadeIn linear;
+        animation-timeline: view();
+        animation-range: cover 0% cover 50%;
     }
 
     .post-content a {
@@ -85,6 +115,9 @@
         margin: var(--space-l) 0;
         color: var(--midgreen);
         font-style: italic;
+        animation: fadeIn linear;
+        animation-timeline: view();
+        animation-range: cover 0% cover 50%;
     }
 
     .post-content code {
@@ -110,6 +143,7 @@
 {{ end }}
 
 {{ define "body" }}
+<div class="container">
 <div class="post-container">
     <div class="post-nav">
         <a href="/"><img src="/images/logo-white.svg" alt="Tanner Mardis Logo" /></a>
@@ -122,5 +156,6 @@
     <div class="post-content">
         {{ .Content }}
     </div>
+</div>
 </div>
 {{ end }}

@@ -64,11 +64,7 @@
 }
 
 /* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        interpolate-size: allow-keywords;
-    }
-}
+
 
 body {
     /* 4. Add accessible line-height */
@@ -161,3 +157,90 @@ a {
 img {
     border-radius: 2px;
 }
+/*NAV*/
+.container:has(nav a[href="#coffee"]:hover) main {
+    background-image: url("/images/tm-coffee.webp");
+}
+.container:has(nav a[href="#jedi"]:hover) main {
+    background-image: url("/images/tm-jedi.webp");
+}
+.container:has(nav a[href="/design"]:hover) main {
+    background-image: url("/images/tm-design.webp");
+}
+.container:has(nav a[href="/photos"]:hover) main {
+    background-image: url("/images/tm-photo.webp");
+}
+.container:has(nav a[href="/bookshelf"]:hover) main {
+    background-image: url("/images/tm-book.webp");
+}
+.container:has(nav a[href="/posts"]:hover) main {
+    background-image: url("/images/tm-work.webp");
+}
+.container:has(nav a[href="https://x.com/tannermardis"]:hover) main {
+    background-image: url("/images/tm-twitter.webp");
+}
+nav {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    order: 2;
+}
+nav.nav-icons-only {
+    height: calc(100dvh - (var(--space-s) * 2));
+    width: calc((100dvh - (var(--space-s) * 2)) / 7);
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    align-self: start;
+    justify-self: end;
+}
+
+nav.nav-icons-only a {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    display: grid;
+    place-items: center;
+}
+
+nav.nav-icons-only a img {
+    margin: 0;
+}
+
+nav a:first-child {
+    border-radius: var(--space-2xs) var(--space-2xs) 0px 0px;
+}
+nav a:last-child {
+    border-radius: 0px 0px var(--space-2xs) var(--space-2xs);
+}
+nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-l);
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--limegreen);
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    color: var(--midgreen);
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-bottom: -1px;
+}
+nav a:hover,
+nav a:focus {
+    color: var(--creme);
+    border: 1px solid var(--limegreen);
+    gap: var(--space-m);
+    outline: none;
+    background-color: oklch(from var(--blackgreen) l c h / 0.5);
+}
+@media (max-width: 800px) {
+    nav {
+        order: 3;
+    }
+
+}
+/*END NAV*/
