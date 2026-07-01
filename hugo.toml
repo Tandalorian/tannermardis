@@ -2,6 +2,9 @@ baseURL = "https://tannermardis.com"
 locale = "en-us"
 title = "Tanner the Mardis"
 
+[minify]
+  minifyOutput = true
+
 [params]
   description = "Designer & Photographer, Based in Texas."
   image = "/images/og-image.png"
