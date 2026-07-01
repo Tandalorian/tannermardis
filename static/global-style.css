@@ -2,16 +2,16 @@
 @font-face {
     font-family: "Regular Bold";
     src:
-        url("fonts/RegularXLSoft-BoldWEB.woff") format("woff"),
-        url("fonts/RegularXLSoft-BoldWEB.woff2") format("woff2");
+        url("/fonts/RegularXLSoft-BoldWEB.woff") format("woff"),
+        url("/fonts/RegularXLSoft-BoldWEB.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: "Regular Medium";
     src:
-        url("fonts/RegularXLSoft-MediumWEB.woff") format("woff"),
-        url("fonts/RegularXLSoft-MediumWEB.woff2") format("woff2");
+        url("/fonts/RegularXLSoft-MediumWEB.woff") format("woff"),
+        url("/fonts/RegularXLSoft-MediumWEB.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
 }
@@ -128,7 +128,7 @@ h6 {
 */
 html {
     background: var(--darkgreen);
-    background-image: url("images/noise.png");
+    background-image: url("/images/noise.png");
     background-size: 60px;
 }
 body {

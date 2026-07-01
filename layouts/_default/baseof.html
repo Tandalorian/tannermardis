@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/global-style.css" />
+        <link rel="preload" href="/fonts/RegularXLSoft-MediumWEB.woff2" as="font" type="font/woff2" crossorigin />
+        <style>{{ readFile "static/global-style.css" | safeCSS }}</style>
 
         <!-- SEO -->
         <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
