@@ -17,14 +17,9 @@
     }
 
     body {
-        background: var(--darkgrey);
+        background: var(--blackgreen);
         background-image: url("/images/noise.png");
         padding: 0;
-        &::after {
-            content: '';
-            display: block;
-            height: 100vh;
-        }
     }
 
     *,
@@ -88,14 +83,11 @@
 {{ end }}
 
 {{ define "body" }}
+<div class="layout-nav">
+<div class="page-main">
 <div class="masonry-wrapper">
     <div class="masonry">
         <div class="gallery">
-            <div class="masonry-item">
-                <a rel="rel1" href="/">
-                    <img src="/images/logo-white.svg" alt="logo" class="masonry-content" />
-                </a>
-            </div>
             {{ range sort (readDir "static/photos") "Name" "desc" }}
                 {{ if not .IsDir }}
                 <div class="masonry-item">
@@ -110,6 +102,9 @@
 </div>
 <div class="footer">
     <p>All Photography &copy; Tanner Mardis</p>
+</div>
+</div>
+{{ partial "nav.html" (dict "iconsOnly" true) }}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>

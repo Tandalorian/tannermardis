@@ -9,7 +9,7 @@ My first expierience with good coffee is memorable for me. The first time being 
 
 In order to try this glorious new tech I had to order a coffee, after mucking through the baristas snobbery I landed on a latte. Mind you coffee was nasty to me, every sampling I had had to that point was just dirty bean juice. Sightglass changed that. 
 
-Fast forward to today and I am normally the biggest coffee nerd in most of my friend circles. My wife has graciously endulged my obsession and allowed a coffee bar to take up a good portion of her kitchen. That moment taught me to find where the bar was set high and work backwards from there. 
+Fast forward to today and I am normally the biggest coffee nerd in most of my friend circles. My wife has graciously endulged my obsession and allowed a coffee bar to take up a good portion of her kitchen. That moment taught me to find where the bar was set and work backwards from there. 
 
 ## Developing a Palette for Design
 
@@ -23,7 +23,7 @@ Documentaries are one of my favorite resources. This is where you get to see beh
 
 One of my favorite quotes is from Clayton M. Christensen.
 
->Questions are places in your mind where answers fit. If you haven’t asked the question, the answer has nowhere to go. It hits your mind and bounces right off. You have to ask the question – you have to want to know – in order to open up the space for the answer to fit.
+>Questions are places in your mind where answers fit. If you haven't asked the question, the answer has nowhere to go. It hits your mind and bounces right off. You have to ask the question – you have to want to know – in order to open up the space for the answer to fit.
 
 This to me is an amazing blueprint of how to brew and steep on something. You ask questions, questions about it, how it was made, why it was made, if it's serving a purpose, did that purpose improve upon anything, did it bring joy, does it contain a message. Then ask your self questions, have a dialoge disecting what you see. 
 

@@ -15,22 +15,19 @@
         padding: var(--space-s);
         margin: 0px;
         display: grid;
-        grid-template-columns: 4fr 6fr 1fr;
+        grid-template-columns: 2fr 4fr 1fr;
         gap: var(--space-s);
     }
 
     /* Left sticky column */
     .posts-sidebar {
-
         position: sticky;
         top: var(--space-s);
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: var(--space-m));
         padding: var(--space-m);
-
     }
 
     .posts-sidebar a img {
@@ -78,6 +75,7 @@
     .post-item a:hover {
         color: var(--creme);
         border-color: var(--limegreen);
+        background-color: var(--darkergreen);
     }
 
     .post-title {
@@ -99,41 +97,21 @@
         padding: var(--space-xl) 0;
     }
 
+    
     @media (max-width: 800px) {
-        .posts-layout {
+    .container {
+            display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: auto 1fr;
         }
+}
 
-        .posts-sidebar {
-            position: static;
-            height: auto;
-            border-right: none;
-            padding: var(--space-s);
-            flex-direction: row;
-            align-items: center;
-            gap: var(--space-s);
-        }
-
-        .posts-sidebar a img {
-            max-width: 36px;
-        }
-
-        .posts-sidebar h1 {
-            font-size: var(--step0);
-        }
-
-        .posts-content {
-            padding: var(--space-l) var(--space-s);
-        }
-    }
+   
 </style>
 {{ end }}
 
 {{ define "body" }}
 <div class="container">
     <aside class="posts-sidebar">
-        <a href="/"><img src="/images/logo-white.svg" alt="Tanner Mardis Logo" /></a>
         <h1>Tanner's<br>Thoughts on</h1>
     </aside>
     <div class="posts-content">
@@ -148,8 +126,6 @@
             </li>
             {{ end }}
         </ul>
-        {{ else }}
-        <p class="empty-state">No posts yet — check back soon.</p>
         {{ end }}
     </div>
     {{ partial "nav.html" (dict "iconsOnly" true) }}

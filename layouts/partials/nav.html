@@ -1,24 +1,143 @@
+<style type="text/css">
+
+.container:has(nav a[href="#coffee"]:hover) main {
+    background-image: url("/images/tm-coffee.webp");
+}
+.container:has(nav a[href="#jedi"]:hover) main {
+    background-image: url("/images/tm-jedi.webp");
+}
+.container:has(nav a[href="/design"]:hover) main {
+    background-image: url("/images/tm-design.webp");
+}
+.container:has(nav a[href="/photos"]:hover) main {
+    background-image: url("/images/tm-photo.webp");
+}
+.container:has(nav a[href="/bookshelf"]:hover) main {
+    background-image: url("/images/tm-book.webp");
+}
+.container:has(nav a[href="/posts"]:hover) main {
+    background-image: url("/images/tm-work.webp");
+}
+.container:has(nav a[href="https://x.com/tannermardis"]:hover) main {
+    background-image: url("/images/tm-twitter.webp");
+}
+nav {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    order: 2;
+}
+nav.nav-icons-only a {
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+}
+nav.nav-icons-only {
+    position: sticky;
+    top: var(--space-s);
+    height: calc(100dvh - (var(--space-s) * 2));
+    aspect-ratio: 1 / 8;
+    width: auto;
+    display: grid;
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+    align-self: start;
+    justify-self: end;
+}
+nav.nav-icons-only a img {
+    margin: 0;
+}
+nav a:first-child {
+    border-radius: var(--space-2xs) var(--space-2xs) 0px 0px;
+}
+nav a:first-child img {
+    max-width: 32px;
+}
+nav a:last-child {
+    border-radius: 0px 0px var(--space-2xs) var(--space-2xs);
+}
+nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-l);
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--limegreen);
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    color: var(--midgreen);
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-bottom: -1px;
+}
+nav a:hover,
+nav a:focus {
+    color: var(--creme);
+    border: 1px solid var(--limegreen);
+    gap: var(--space-m);
+    outline: none;
+    background-color: oklch(from var(--blackgreen) l c h / 0.5);
+}
+
+.layout-nav {
+    padding: var(--space-s);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-s);
+    align-items: start;
+}
+
+.layout-nav > .page-main {
+    min-width: 0;
+}
+
+@media (max-width: 800px) {
+    .layout-nav {
+        grid-template-columns: 1fr;
+    }
+
+    nav.nav-icons-only {
+        position: sticky;
+        top: auto;
+        bottom: var(--space-s);
+        width: 100%;
+        height: auto;
+        aspect-ratio: 8 / 1;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+}
+</style>
+
 {{ $iconsOnly := .iconsOnly | default false }}
 <nav class="{{ if $iconsOnly }}nav-icons-only{{ else }}nav-with-text{{ end }}">
     <a href="/">
-        <img src="/images/icon-mug.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Coffee Drinkin'{{ end }}
+        <img src="/images/logo-green.svg" alt="Tanner Mardis Logo" aria-hidden="true" />{{ if not $iconsOnly }}Tanner Mardis{{ end }}
+    </a>
+    <a href="#coffee">
+        <img src="/images/icon-mug.svg" alt="Coffe Mug Icon" aria-hidden="true" />{{ if not $iconsOnly }}Coffee Drinkin'{{ end }}
     </a>
     <a href="#jedi">
-        <img src="/images/icon-starwars.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Star Wars Lovin'{{ end }}
+        <img src="/images/icon-starwars.svg" alt="Star Wars Icon" aria-hidden="true" />{{ if not $iconsOnly }}Star Wars Lovin'{{ end }}
     </a>
     <a href="/design">
-        <img src="/images/icon-pen.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Pixel Pushing{{ end }}
+        <img src="/images/icon-pen.svg" alt="Pen Icon" aria-hidden="true" />{{ if not $iconsOnly }}Pixel Pushing{{ end }}
     </a>
     <a href="/photos">
-        <img src="/images/icon-camera.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Photo Taking{{ end }}
+        <img src="/images/icon-camera.svg" alt="Camera Icon" aria-hidden="true" />{{ if not $iconsOnly }}Photo Taking{{ end }}
     </a>
     <a href="/bookshelf">
-        <img src="/images/icon-book.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Reading{{ end }}
+        <img src="/images/icon-book.svg" alt="Book Icon" aria-hidden="true" />{{ if not $iconsOnly }}Reading{{ end }}
     </a>
     <a href="/posts">
-        <img src="/images/icon-typewritter.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Writing{{ end }}
+        <img src="/images/icon-typewritter.svg" alt="Typewriter Icon" aria-hidden="true" />{{ if not $iconsOnly }}Writing{{ end }}
     </a>
     <a href="https://x.com/tannermardis" target="_blank">
-        <img src="/images/icon-twitter.svg" alt="" aria-hidden="true" />{{ if not $iconsOnly }}Tweeter{{ end }}
+        <img src="/images/icon-twitter.svg" alt="Twitter Icon" aria-hidden="true" />{{ if not $iconsOnly }}Tweeter{{ end }}
     </a>
 </nav>

@@ -28,27 +28,9 @@
         padding: var(--space-s);
         margin: 0px;
         display: grid;
-        grid-template-columns: 1fr 4fr 2fr;
+        grid-template-columns: 2fr 1fr;
         gap: var(--space-s);
         height: 100dvh;
-    }
-    aside {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--space-l);
-        border: 1px solid var(--limegreen);
-        border-radius: var(--space-2xs);
-        padding: var(--space-l);
-    }
-    aside img {
-        max-width: 100px;
-    }
-    aside h1 {
-        margin: 0;
-        color: var(--midgreen);
-        writing-mode: vertical-rl;
-        font-size: 5vh;
     }
     main {
         border: 1px solid var(--limegreen);
@@ -57,16 +39,12 @@
         background-size: cover;
         background-position: center center;
         transition: background 0.3s ease-in-out;
-        order: 1;
     }
 
     @media (max-width: 800px) {
         .container {
             display: grid;
             grid-template-columns: 1fr;
-        }
-        aside h1 {
-            writing-mode: horizontal-tb;
         }
         main {
             aspect-ratio: 1;
@@ -77,10 +55,6 @@
 
 {{ define "body" }}
 <div class="container">
-    <aside>
-        <img src="/images/logo-green.svg" alt="Tanner Mardis Logo" />
-        <h1>Tanner the Mardis</h1>
-    </aside>
     {{ partial "nav.html" (dict "iconsOnly" false) }}
     <main role="img" aria-label="Tanner Mardis background preview"></main>
 </div>

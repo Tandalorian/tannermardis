@@ -45,11 +45,15 @@
     }
 
     html {
-        background: var(--4);
+        background: var(--blackgreen);
         background-image: url("/images/noise.png");
     }
 
     body {
+        display: block;
+    }
+
+    .page-main {
         display: flex;
         justify-content: center;
     }
@@ -62,20 +66,9 @@
         justify-content: center;
         border: 24px solid var(--2);
         border-bottom: 0px;
-        border-radius: 4px;
+        border-radius: var(--space-2xs);
         padding: 0px 0px;
         max-width: 1300px;
-    }
-
-    .topshelf {
-        height: 200px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background: var(--4);
-        background-image: url("/images/noise.png");
-        border-bottom: 24px solid var(--2);
     }
 
     .bookwrap {
@@ -125,12 +118,9 @@
 {{ end }}
 
 {{ define "body" }}
+<div class="layout-nav">
+<div class="page-main">
 <div class="bookcase">
-    <div class="topshelf">
-        <a href="/"><img class="logo" src="/images/logo-white.svg" /></a>
-        <h1>Tanner's Bookcase</h1>
-        <p></p>
-    </div>
     {{ range hugo.Data.books }}
     <div class="bookwrap">
         <div class="book">
@@ -138,5 +128,8 @@
         </div>
     </div>
     {{ end }}
+</div>
+</div>
+{{ partial "nav.html" (dict "iconsOnly" true) }}
 </div>
 {{ end }}

@@ -14,10 +14,11 @@ body {
 .container {
     padding: var(--space-s);
     margin: 0px;
+    background-color: var(--darkergreen);
 }
 .post-container {
         max-width: 720px;
-        margin: 0 auto;
+        margin: 0 auto var(--space-3xl) auto;
         padding: var(--space-l) var(--space-l);
         border: 1px solid;
         border-color: var(--limegreen);
@@ -143,6 +144,8 @@ body {
 {{ end }}
 
 {{ define "body" }}
+<div class="layout-nav">
+<div class="page-main">
 <div class="container">
 <div class="post-container">
     <div class="post-nav">
@@ -156,6 +159,9 @@ body {
     <div class="post-content">
         {{ .Content }}
     </div>
+    </div>
 </div>
+</div>
+{{ partial "nav.html" (dict "iconsOnly" true) }}
 </div>
 {{ end }}
