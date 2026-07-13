@@ -101,15 +101,56 @@ nav a:focus {
         grid-template-columns: 1fr;
     }
 
+    body:has(nav.nav-icons-only) {
+        --mobile-nav-h: calc((100vw - (var(--space-s) * 2)) / 8);
+    }
+
+    .layout-nav:has(> nav.nav-icons-only),
+    .container:has(> nav.nav-icons-only) {
+        padding-top: calc(var(--mobile-nav-h) + var(--space-s) * 2);
+    }
+
     nav.nav-icons-only {
-        position: sticky;
-        top: auto;
-        bottom: var(--space-s);
-        width: 100%;
+        position: fixed;
+        top: var(--space-s);
+        left: var(--space-s);
+        right: auto;
+        bottom: auto;
+        z-index: 100;
+        width: calc(100vw - (var(--space-s) * 2));
         height: auto;
         aspect-ratio: 8 / 1;
+        justify-self: stretch;
         grid-template-rows: 1fr;
         grid-template-columns: repeat(8, minmax(0, 1fr));
+        background: var(--blackgreen);
+        box-sizing: border-box;
+        will-change: transform;
+    }
+
+    nav.nav-icons-only a {
+        aspect-ratio: 1 / 1;
+        margin-bottom: 0;
+        margin-right: -1px;
+    }
+
+    nav.nav-icons-only a img {
+        width: 1.125rem;
+        max-width: 1.125rem;
+        height: auto;
+    }
+
+    nav.nav-icons-only a:first-child {
+        border-radius: var(--space-2xs) 0 0 var(--space-2xs);
+    }
+
+    nav.nav-icons-only a:first-child img {
+        max-width: 1.125rem;
+    }
+
+    nav.nav-icons-only a:last-child {
+        border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
+        margin-right: 0;
     }
 }
 </style>
@@ -141,3 +182,6 @@ nav a:focus {
         <img src="/images/icon-twitter.svg" alt="Twitter Icon" aria-hidden="true" />{{ if not $iconsOnly }}Tweeter{{ end }}
     </a>
 </nav>
+{{ if $iconsOnly }}
+<script src="/nav-scroll.js" defer></script>
+{{ end }}
