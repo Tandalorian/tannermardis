@@ -45,6 +45,11 @@ nav.nav-icons-only {
     grid-template-rows: repeat(8, minmax(0, 1fr));
     align-self: start;
     justify-self: end;
+    border-radius: var(--space-2xs);
+    overflow: hidden;
+    background: oklch(from var(--blackgreen) l c h / 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 nav.nav-icons-only a img {
     margin: 0;
@@ -123,7 +128,6 @@ nav a:focus {
         justify-self: stretch;
         grid-template-rows: 1fr;
         grid-template-columns: repeat(8, minmax(0, 1fr));
-        background: var(--blackgreen);
         box-sizing: border-box;
         will-change: transform;
     }
