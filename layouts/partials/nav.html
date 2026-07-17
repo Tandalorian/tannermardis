@@ -67,7 +67,6 @@ nav a {
     align-items: center;
     gap: var(--space-l);
     padding: var(--space-s) var(--space-m);
-    border: 1px solid var(--limegreen);
     border-radius: 0px;
     cursor: pointer;
     transition: all 0.3s ease-out;
@@ -78,15 +77,17 @@ nav a {
     letter-spacing: 2px;
     width: 100%;
     margin-bottom: -1px;
+    box-shadow: inset 0px 0px 0px 1px var(--limegreen);
 }
 nav a:hover,
 nav a:focus {
     color: var(--creme);
-    border: 1px solid var(--limegreen);
     gap: var(--space-m);
     outline: none;
     background-color: oklch(from var(--blackgreen) l c h / 0.5);
+    box-shadow: inset 0px 0px 0px 4px var(--limegreen);
 }
+
 
 .layout-nav {
     padding: var(--space-s);
